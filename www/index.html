@@ -1,9 +1,12 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
   <script src="components/loader.js"></script>
   <script src="lib/onsenui/js/onsenui.min.js"></script>
 
@@ -11,18 +14,22 @@
   <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="_shared/style.css">
+  <script src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
+  <script src="_shared/key.js"></script>
+  <script src="script.js"></script>
 
   <script>
-    ons.ready(function() {
+    ons.ready(function () {
       console.log("Onsen UI is ready!");
     });
 
     window.fn = {};
-    window.fn.open = function() {
+    window.fn.open = function () {
       var menu = document.getElementById('menu');
       menu.open();
     };
-    window.fn.load = function(page) {
+    window.fn.load = function (page) {
       var content = document.getElementById('content');
       var menu = document.getElementById('menu');
       content
@@ -36,6 +43,7 @@
     }
   </script>
 </head>
+
 <body>
   <ons-splitter>
     <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
@@ -65,44 +73,64 @@
           </ons-toolbar-button>
         </div>
         <div class="center">
-          Main
         </div>
       </ons-toolbar>
-      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-        Swipe right to open the menu!
-      </p>
+      <div class="container">
+        <h1 class="heading">Room example</h1>
+        <p class="note">
+          Change Room mode (before join in a room):
+          <a href="#">mesh</a> / <a href="#sfu">sfu</a>
+        </p>
+        <div class="room">
+          <div>
+            <video id="js-local-stream"></video>
+            <span id="js-room-mode"></span>:
+            <input type="text" placeholder="Room Name" id="js-room-id">
+            <button id="js-join-trigger">Join</button>
+            <button id="js-leave-trigger">Leave</button>
+          </div>
+          <div class="remote-streams" id="js-remote-streams"></div>
+          <div>
+            <pre class="messages" id="js-messages"></pre>
+            <input type="text" id="js-local-text">
+            <button id="js-send-trigger">Send</button>
+          </div>
+        </div>
+        <p class="meta" id="js-meta"></p>
+      </div>
     </ons-page>
   </ons-template>
 
   <ons-template id="settings.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="left">
-        <ons-toolbar-button onclick="fn.open()">
-          <ons-icon icon="ion-ios-menu, material:md-menu"></ons-icon>
-        </ons-toolbar-button>
-      </div>
-      <div class="center">
-        Settings
-      </div>
-    </ons-toolbar>
-  </ons-page>
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="ion-ios-menu, material:md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Settings
+        </div>
+      </ons-toolbar>
+    </ons-page>
   </ons-template>
 
   <ons-template id="about.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="left">
-        <ons-toolbar-button onclick="fn.open()">
-          <ons-icon icon="ion-ios-menu, material:md-menu"></ons-icon>
-        </ons-toolbar-button>
-      </div>
-      <div class="center">
-        About
-      </div>
-    </ons-toolbar>
-  </ons-page>
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="ion-ios-menu, material:md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          About
+        </div>
+      </ons-toolbar>
+    </ons-page>
   </ons-template>
 
 </body>
+
 </html>
