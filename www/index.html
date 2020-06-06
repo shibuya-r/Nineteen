@@ -1,136 +1,60 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy"
-    content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
-  <script src="components/loader.js"></script>
-  <script src="lib/onsenui/js/onsenui.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <script type="text/javascript" src="./js/lib/jsbn.js"></script>
+  <script type="text/javascript" src="./js/lib/jsbn2.js"></script>
+  <script type="text/javascript" src="./js/lib/sjcl.js"></script>
+  <script type="text/javascript" src="./js/lib/aws-sdk.min.js"></script>
+  <script type="text/javascript" src="./js/lib/aws-cognito-sdk.min.js"></script>
+  <script type="text/javascript" src="./js/lib/amazon-cognito-identity.min.js"></script>
+  <script type="text/javascript" src="./js/lib/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="./js/signup.js"></script>
 
-  <link rel="stylesheet" href="components/loader.css">
-  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
-  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="_shared/style.css">
-  <script src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
-  <script src="_shared/key.js"></script>
-  <script src="script.js"></script>
-
-  <script>
-    ons.ready(function () {
-      console.log("Onsen UI is ready!");
-    });
-
-    window.fn = {};
-    window.fn.open = function () {
-      var menu = document.getElementById('menu');
-      menu.open();
-    };
-    window.fn.load = function (page) {
-      var content = document.getElementById('content');
-      var menu = document.getElementById('menu');
-      content
-        .load(page)
-        .then(menu.close.bind(menu));
-    };
-
-    if (ons.platform.isIPhoneX()) {
-      document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
-      document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
-    }
-  </script>
 </head>
 
 <body>
-  <ons-splitter>
-    <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
-      <ons-page>
-        <ons-list>
-          <ons-list-item onclick="fn.load('home.html')" tappable>
-            Home
-          </ons-list-item>
-          <ons-list-item onclick="fn.load('settings.html')" tappable>
-            Settings
-          </ons-list-item>
-          <ons-list-item onclick="fn.load('about.html')" tappable>
-            About
-          </ons-list-item>
-        </ons-list>
-      </ons-page>
-    </ons-splitter-side>
-    <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
-  </ons-splitter>
 
-  <ons-template id="home.html">
-    <ons-page>
-      <ons-toolbar>
-        <div class="left">
-          <ons-toolbar-button onclick="fn.open()">
-            <ons-icon icon="ion-ios-menu, material:md-menu"></ons-icon>
-          </ons-toolbar-button>
-        </div>
-        <div class="center">
-        </div>
-      </ons-toolbar>
-      <div class="container">
-        <h1 class="heading">Room example</h1>
-        <p class="note">
-          Change Room mode (before join in a room):
-          <a href="#">mesh</a> / <a href="#sfu">sfu</a>
-        </p>
-        <div class="room">
-          <div>
-            <video id="js-local-stream"></video>
-            <span id="js-room-mode"></span>:
-            <input type="text" placeholder="Room Name" id="js-room-id">
-            <button id="js-join-trigger">Join</button>
-            <button id="js-leave-trigger">Leave</button>
-          </div>
-          <div class="remote-streams" id="js-remote-streams"></div>
-          <div>
-            <pre class="messages" id="js-messages"></pre>
-            <input type="text" id="js-local-text">
-            <button id="js-send-trigger">Send</button>
-          </div>
-        </div>
-        <p class="meta" id="js-meta"></p>
-      </div>
-    </ons-page>
-  </ons-template>
-
-  <ons-template id="settings.html">
-    <ons-page>
-      <ons-toolbar>
-        <div class="left">
-          <ons-toolbar-button onclick="fn.open()">
-            <ons-icon icon="ion-ios-menu, material:md-menu"></ons-icon>
-          </ons-toolbar-button>
-        </div>
-        <div class="center">
-          Settings
-        </div>
-      </ons-toolbar>
-    </ons-page>
-  </ons-template>
-
-  <ons-template id="about.html">
-    <ons-page>
-      <ons-toolbar>
-        <div class="left">
-          <ons-toolbar-button onclick="fn.open()">
-            <ons-icon icon="ion-ios-menu, material:md-menu"></ons-icon>
-          </ons-toolbar-button>
-        </div>
-        <div class="center">
-          About
-        </div>
-      </ons-toolbar>
-    </ons-page>
-  </ons-template>
-
+  <div id="signup">
+    <h1>Sign Up</h1>
+    <form name='form-signup'>
+      <span style="display: inline-block; width: 150px;">User ID</span>
+      <input type="text" id="userid" placeholder="User ID">
+      <br />
+      <span style="display: inline-block; width: 150px;">Password</span>
+      <input type="password" id="password" placeholder="Password">
+      <br /><br />
+      <input type="button" id="createAccount" value="Create Account">
+    </form>
+  </div>
+  <div id="activation">
+    <h1>Activation</h1>
+    <div><span style="color: red;">All fields are required.</span></div>
+    <form name="form-activation">
+      <span style="display: inline-block; width: 150px;">User ID</span>
+      <input type="text" id="activationId" placeholder="User ID">
+      <br />
+      <span style="display: inline-block; width: 150px;">Activation Key</span>
+      <input type="text" id="activationKey" placeholder="Activation Key">
+      <br /><br />
+      <input type="button" id="activationButton" value="Activation">
+    </form>
+  </div>
+  <div id="signin">
+    <h1>Sign In</h1>
+    <div id="message"><span style="color: red;"></span></div>
+    <form name="form-signin">
+      <span style="display: inline-block; width: 150px;">User ID</span>
+      <input type="text" id="signinId" placeholder="User ID">
+      <br />
+      <span style="display: inline-block; width: 150px;">Password</span>
+      <input type="password" id="signinPassword" placeholder="Password">
+      <br /><br />
+      <input type="button" id="signinButton" value="Sign In">
+    </form>
+  </div>
 </body>
 
 </html>
