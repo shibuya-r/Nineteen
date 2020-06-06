@@ -1,0 +1,31 @@
+/* Styles for HOME layouts */
+
+ons-row {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.home-group-card {
+  border: none;
+  border-radius: 40%;
+  box-shadow: 0px 0px 3px 0px #000000;
+  display: block;
+  font-size: 12px;
+  height: 30px;
+  margin: 15px auto;
+  text-align: center;
+  width: 30%;
+}
+
+#home img, #home-arrival-group img {
+  box-shadow: 0px 0px 3px 0px #000000;
+  max-height: 160px;
+  max-width: auto;
+  display: block;
+}
+
+#home .content, #home-arrival-group .content{
+  font-size: 10px;
+  padding: 2px 0;
+}
+

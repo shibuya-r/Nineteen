@@ -1,2 +1,26 @@
-/**/
+/* Style for base layouts */
 
+.background_darkslateblue {
+  background-color: #483d8b;
+}
+
+.background_whitesmoke {
+  background-color: #F5F5F5;
+}
+
+.icon-white {
+  color: #F5F5F5;
+}
+
+.icon-darkslateblue {
+  color: #483d8b;
+}
+
+.toolbar {
+  background-color: #483d8b;
+}
+
+.toolbar__center, .toolbar__left, .toolbar__right {
+  color: #FFFFFF;
+  margin: 0 10px;
+}

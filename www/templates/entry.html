@@ -1,0 +1,40 @@
+<ons-page id="entry">
+  <div id="signup">
+    <h1>Sign Up</h1>
+    <form name='form-signup'>
+      <span style="display: inline-block; width: 150px;">User ID</span>
+      <input type="text" id="userid" placeholder="User ID">
+      <br />
+      <span style="display: inline-block; width: 150px;">Password</span>
+      <input type="password" id="password" placeholder="Password">
+      <br /><br />
+      <input type="button" id="createAccount" value="Create Account">
+    </form>
+  </div>
+  <div id="activation">
+    <h1>Activation</h1>
+    <div><span style="color: red;">All fields are required.</span></div>
+    <form name="form-activation">
+      <span style="display: inline-block; width: 150px;">User ID</span>
+      <input type="text" id="activationId" placeholder="User ID">
+      <br />
+      <span style="display: inline-block; width: 150px;">Activation Key</span>
+      <input type="text" id="activationKey" placeholder="Activation Key">
+      <br /><br />
+      <input type="button" id="activationButton" value="Activation">
+    </form>
+  </div>
+  <div id="signin">
+    <h1>Sign In</h1>
+    <div id="message"><span style="color: red;"></span></div>
+    <form name="form-signin">
+      <span style="display: inline-block; width: 150px;">User ID</span>
+      <input type="text" id="signinId" placeholder="User ID">
+      <br />
+      <span style="display: inline-block; width: 150px;">Password</span>
+      <input type="password" id="signinPassword" placeholder="Password">
+      <br /><br />
+      <input type="button" id="signinButton" value="Sign In">
+    </form>
+  </div>
+</ons-page>
