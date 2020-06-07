@@ -1,8 +1,31 @@
 /* Styles for HOME layouts */
 
-ons-row {
+#home-arr img, #home-now-group img ,#home-rcmdd img{
+  box-shadow: 0px 0px 3px 0px #000000;
+  display: block;
+  max-height: 160px;
+  max-width: auto;
+}
+
+#home-arr ons-row, #home-now-group ons-row, #home-rcmdd ons-row {
   margin: 0 auto;
   width: 90%;
+}
+
+#home-arr .content, #home-now-group .content, #home-rcmdd .content {
+  font-size: 10px;
+  padding: 2px 0;
+}
+
+#home-arr .search-input, #home-now-group .search-input, #home-rcmdd .search-input {
+  background-color: #FFFFFF;
+  display: block;
+  margin: 5px auto;
+  min-width: 200px;
+}
+
+#home-arr .tabbar, #home-now-group .tabbar, #home-rcmdd .tabbar {
+  position: sticky;
 }
 
 .home-group-card {
@@ -16,16 +39,3 @@ ons-row {
   text-align: center;
   width: 30%;
 }
-
-#home-arr img, #home-now-group img ,#home-rcmdd img{
-  box-shadow: 0px 0px 3px 0px #000000;
-  max-height: 160px;
-  max-width: auto;
-  display: block;
-}
-
- #home-arr .content, #home-now-group .content, #home-rcmdd .content{
-  font-size: 10px;
-  padding: 2px 0;
-}
-
