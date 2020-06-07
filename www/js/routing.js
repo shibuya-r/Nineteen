@@ -7,26 +7,26 @@ document.addEventListener('init', function (event) {
     };
 
   } else if (page.id === 'home-rcmdd') {
-    page.querySelector('#js-home-arr-g-btn').onclick = () => {
+    page.querySelector('#js-home-arr-btn').onclick = () => {
       moveToHomeArrPage();
     };
-    page.querySelector('#js-home-now-g-btn').onclick = () => {
+    page.querySelector('#js-home-now-btn').onclick = () => {
       moveToHomeNowPage();
     };
 
   } else if (page.id === 'home-arr') {
-    page.querySelector('#js-home-rcmdd-g-btn').onclick = () => {
+    page.querySelector('#js-home-rcmdd-btn').onclick = () => {
       moveToHomeRcmddPage();
     };
-    page.querySelector('#js-home-now-g-btn').onclick = () => {
+    page.querySelector('#js-home-now-btn').onclick = () => {
       moveToHomeNowPage();
     };
 
   } else if (page.id === 'home-now-group') {
-    page.querySelector('#js-home-rcmdd-g-btn').onclick = () => {
+    page.querySelector('#js-home-rcmdd-btn').onclick = () => {
       moveToHomeRcmddPage()
     };
-    page.querySelector('#js-home-arr-g-btn').onclick = () => {
+    page.querySelector('#js-home-arr-btn').onclick = () => {
       moveToHomeArrPage();
     };
   }
