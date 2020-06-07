@@ -1,5 +1,6 @@
 /* Style for base layouts */
-ons-tabbar {
+ons-tabbar.footer-tab {
+  bottom: 0px;
   position: sticky; 
 }
 
@@ -9,6 +10,10 @@ ons-tabbar {
 
 .background_whitesmoke {
   background-color: #F5F5F5;
+}
+
+.footer-tab .tabbar {
+  position: relative;
 }
 
 .icon-darkslateblue {

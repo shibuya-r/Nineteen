@@ -1,4 +1,6 @@
 'use strict'
+// Script for page routes.
+
 // vars declaration
 let myNavigtor;
 
@@ -6,21 +8,28 @@ let myNavigtor;
 document.addEventListener('init', function (event) {
   const page = event.target;
   myNavigtor= document.querySelector('#myNavigator');
+
   if (page.id === 'entry') {
+    // Temporary placement for moving from index.html
     page.querySelector('#js-move-home-btn').onclick = () => {
       moveToHomeRcmddPage();
     };
-  } else if (page.id === 'home-arr' || 'home-now' || 'home-rcmdd') {
+  } else {
     // === home header tabs ===
-    page.querySelector('#js-home-arr-btn').onclick = () => {
-      moveToHomeArrPage();
-    };
-    page.querySelector('#js-home-now-btn').onclick = () => {
-      moveToHomeNowPage();
-    };
-    page.querySelector('#js-home-rcmdd-btn').onclick = () => {
-      moveToHomeRcmddPage();
-    };
+    if (page.id === 'home-arr' 
+      || page.id === 'home-now'
+      || page.id === 'home-rcmdd'
+    ) {
+      page.querySelector('#js-home-arr-btn').onclick = () => {
+        moveToHomeArrPage();
+      };
+      page.querySelector('#js-home-now-btn').onclick = () => {
+        moveToHomeNowPage();
+      };
+      page.querySelector('#js-home-rcmdd-btn').onclick = () => {
+        moveToHomeRcmddPage();
+      };
+    }
     
     // === home footer tabs ===
     page.querySelector("#js-group-tab").onclick = () => {

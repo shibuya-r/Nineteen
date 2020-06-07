@@ -1,5 +1,4 @@
 /* Styles for HOME layouts */
-
 #home-arr img, #home-now img ,#home-rcmdd img{
   box-shadow: 0px 0px 3px 0px #000000;
   display: block;
@@ -23,10 +22,6 @@
   margin: 5px auto;
   max-height: 40px;
   min-width: 200px;
-}
-
-#home-arr .tabbar, #home-now .tabbar, #home-rcmdd .tabbar {
-  position: sticky;
 }
 
 .home-group-card {
