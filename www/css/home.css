@@ -17,14 +17,14 @@ ons-row {
   width: 30%;
 }
 
-#home img, #home-arrival-group img {
+#home-arrival-group img, #home-now-group img ,#home-recommended-group img{
   box-shadow: 0px 0px 3px 0px #000000;
   max-height: 160px;
   max-width: auto;
   display: block;
 }
 
-#home .content, #home-arrival-group .content{
+ #home-arrival-group .content, #home-now-group .content, #home-recommended-group .content{
   font-size: 10px;
   padding: 2px 0;
 }
