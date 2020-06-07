@@ -1,4 +1,7 @@
 /* Style for base layouts */
+ons-tabbar {
+  position: sticky; 
+}
 
 .background_darkslateblue {
   background-color: #483d8b;
