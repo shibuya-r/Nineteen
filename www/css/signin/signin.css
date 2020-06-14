@@ -1,0 +1,6 @@
+.page__background {
+    background-image: url('../../image/index_image.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

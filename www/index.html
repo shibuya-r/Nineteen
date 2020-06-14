@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Sign Up</title>
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-  <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/signin/signin.css">
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
   <script type="text/javascript" src="js/lib/jsbn.js"></script>
   <script type="text/javascript" src="js/lib/jsbn2.js"></script>
@@ -15,55 +16,30 @@
   <script type="text/javascript" src="js/lib/aws-cognito-sdk.min.js"></script>
   <script type="text/javascript" src="js/lib/amazon-cognito-identity.min.js"></script>
   <script type="text/javascript" src="js/lib/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/routing.js"></script>
-  <script type="text/javascript" src="js/signup.js"></script>
+  <script type="text/javascript" src="js/login.js"></script>
 </head>
 
 <body>
-  <!-- <ons-navigator swipeable id="myNavigator" page="templates/home/home-recommended-group.html"></ons-navigator> -->
   <ons-navigator swipeable id="myNavigator" page="entry.html"></ons-navigator>
   <ons-template id="entry.html">
     <ons-page id="entry">
-      <div id="signup">
-        <h1>Sign Up</h1>
-        <form name='form-signup'>
-          <span style="display: inline-block; width: 150px;">User ID</span>
-          <input type="text" id="userid" placeholder="User ID">
-          <br />
-          <span style="display: inline-block; width: 150px;">Password</span>
-          <input type="password" id="password" placeholder="Password">
-          <br /><br />
-          <input type="button" id="createAccount" value="Create Account">
-        </form>
-      </div>
-      <div id="activation">
-        <h1>Activation</h1>
-        <div><span style="color: red;">All fields are required.</span></div>
-        <form name="form-activation">
-          <span style="display: inline-block; width: 150px;">User ID</span>
-          <input type="text" id="activationId" placeholder="User ID">
-          <br />
-          <span style="display: inline-block; width: 150px;">Activation Key</span>
-          <input type="text" id="activationKey" placeholder="Activation Key">
-          <br /><br />
-          <input type="button" id="activationButton" value="Activation">
-        </form>
-      </div>
       <div id="signin">
-        <h1>Sign In</h1>
-        <div id="message"><span style="color: red;"></span></div>
-        <form name="form-signin">
-          <span style="display: inline-block; width: 150px;">User ID</span>
-          <input type="text" id="signinId" placeholder="User ID">
-          <br />
-          <span style="display: inline-block; width: 150px;">Password</span>
-          <input type="password" id="signinPassword" placeholder="Password">
-          <br /><br />
-          <input type="button" id="signinButton" value="Sign In">
-        </form>
+        <div id="input_area">
+          <p>
+            <ons-input id="signinId" modifier="underbar" placeholder="Username" float ng-model="page.username">
+            </ons-input>
+          </p>
+          <p>
+            <ons-input id="signinPassword" modifier="underbar" type="password" placeholder="Password" float
+              ng-model="page.password"></ons-input>
+          </p>
+          <p style="margin-top: 30px;">
+            <ons-button id="signinButton">Sign in</ons-button>
+          </p>
+        </div>
       </div>
-      <ons-button id="js-move-home-btn">MoveToHome</ons-button>
     </ons-page>
   </ons-template>
 </body>
+
 </html>

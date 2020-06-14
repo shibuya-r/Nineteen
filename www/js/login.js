@@ -114,7 +114,7 @@ var signIn = function () {
       console.log("accessToken : " + accessToken);
       console.log("refreshToken : " + refreshToken);
 
-      $(location).attr("href", "signin.html");
+      $(location).attr("href", "templates/home/home-recommended-group.html");
     },
 
     onFailure: function (err) {
