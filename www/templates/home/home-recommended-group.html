@@ -1,6 +1,23 @@
-<!-- ホーム画面:おすすめグループ -->
-<ons-page id="home-rcmdd">
-  <div class="page__background background_whitesmoke"></div>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home/home.css">
+  <link rel="stylesheet" href="css/home/under-home.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <script type="text/javascript" src="js/lib/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/routing.js"></script>
+</head>
+
+<body>
+  <!-- ホーム画面:おすすめグループ -->
+  <ons-page id="home-rcmdd">
+    <div class="page__background background_whitesmoke"></div>
     <ons-toolbar class="toolbar">
       <div class="left">
         <ons-icon icon="fa-bell" size="20px" fixed-width="false" class="icon-white"></ons-icon>
@@ -22,7 +39,7 @@
       </label>
 
       <label class="tabbar__item tabbar--material__item">
-        <input type="radio"  id="js-home-arr-btn" name="tabbar-material-a">
+        <input type="radio" id="js-home-arr-btn" name="tabbar-material-a">
         <button class="tabbar__button tabbar--material__button">
           新着
         </button>
@@ -30,7 +47,7 @@
 
       <label class="tabbar__item tabbar--material__item">
         <input type="radio" id="js-home-now-btn" name="tabbar-material-a">
-        <button  class="tabbar__button tabbar--material__button">
+        <button class="tabbar__button tabbar--material__button">
           すぐ飲みたい！
         </button>
       </label>
@@ -128,4 +145,5 @@
       <ons-tab id='js-schedule-tab' label="スケジュール" icon="fa-calendar-alt"></ons-tab>
       <ons-tab id='js-group-tab' label="グループ" icon="fa-users"></ons-tab>
     </ons-tabbar>
-</ons-page>
+  </ons-page>
+</body>
