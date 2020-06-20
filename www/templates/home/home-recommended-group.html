@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="UTF-8">
-  <title>Sign Up</title>
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/home/home.css">
-  <link rel="stylesheet" href="css/home/under-home.css">
-  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-  <script type="text/javascript" src="js/lib/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/routing.js"></script>
-</head>
-
-<body>
-  <!-- ホーム画面:おすすめグループ -->
+<!-- ホーム画面:おすすめグループ -->
   <ons-page id="home-rcmdd">
     <div class="page__background background_whitesmoke"></div>
     <ons-toolbar class="toolbar">
@@ -27,9 +10,9 @@
         <ons-icon icon="fa-cog" size="20px" fixed-width="false" class="icon-white"></ons-icon>
       </div>
     </ons-toolbar>
-
+  
     <input type="button" value="条件で探す" class="search-input search-input--material">
-
+  
     <div class="tabbar tabbar--top tabbar--material">
       <label class="tabbar__item tabbar--material__item">
         <input type="radio" id="js-home-rcmdd-btn" name="tabbar-material-a" checked="checked">
@@ -37,14 +20,14 @@
           おすすめ
         </button>
       </label>
-
+  
       <label class="tabbar__item tabbar--material__item">
         <input type="radio" id="js-home-arr-btn" name="tabbar-material-a">
         <button class="tabbar__button tabbar--material__button">
           新着
         </button>
       </label>
-
+  
       <label class="tabbar__item tabbar--material__item">
         <input type="radio" id="js-home-now-btn" name="tabbar-material-a">
         <button class="tabbar__button tabbar--material__button">
@@ -52,7 +35,7 @@
         </button>
       </label>
     </div>
-
+  
     <div>
       <input type=text class="home-group-card" value="おすすめグループ">
       <!-- ======= [TODO] shoud use "for loop" ======= -->
@@ -62,7 +45,7 @@
             <div class="content">
               Group1 #3人
             </div>
-            <img src="assets/sample/sample-bijyo1.jpg" alt="group img">
+            <img src="../../assets/sample/sample-bijyo1.jpg" alt="group img">
             <div class="content">
               楽しく飲め人募集！
             </div>
@@ -73,7 +56,7 @@
             <div class="content">
               Group1 #3人
             </div>
-            <img src="assets/sample/sample-bijyo1.jpg" alt="group img">
+            <img src="../../assets/sample/sample-bijyo1.jpg" alt="group img">
             <div class="content">
               楽しく飲め人募集！
             </div>
@@ -84,7 +67,7 @@
             <div class="content">
               Group1 #3人
             </div>
-            <img src="assets/sample/sample-bijyo1.jpg" alt="group img">
+            <img src="../../assets/sample/sample-bijyo1.jpg" alt="group img">
             <div class="content">
               楽しく飲め人募集！
             </div>
@@ -95,7 +78,7 @@
             <div class="content">
               Group1 #3人
             </div>
-            <img src="assets/sample/sample-bijyo1.jpg" alt="group img">
+            <img src="../../assets/sample/sample-bijyo1.jpg" alt="group img">
             <div class="content">
               楽しく飲め人募集！
             </div>
@@ -106,7 +89,7 @@
             <div class="content">
               Group1 #3人
             </div>
-            <img src="assets/sample/sample-bijyo1.jpg" alt="group img">
+            <img src="../../assets/sample/sample-bijyo1.jpg" alt="group img">
             <div class="content">
               楽しく飲め人募集！
             </div>
@@ -117,7 +100,7 @@
             <div class="content">
               Group1 #3人
             </div>
-            <img src="assets/sample/sample-bijyo1.jpg" alt="group img">
+            <img src="../../assets/sample/sample-bijyo1.jpg" alt="group img">
             <div class="content">
               楽しく飲め人募集！
             </div>
@@ -128,7 +111,7 @@
             <div class="content">
               Group1 #3人
             </div>
-            <img src="assets/sample/sample-bijyo1.jpg" alt="group img">
+            <img src="../../assets/sample/sample-bijyo1.jpg" alt="group img">
             <div class="content">
               楽しく飲め人募集！
             </div>
@@ -137,7 +120,7 @@
       </ons-row>
       <!-- ========================================== -->
     </div>
-
+  
     <ons-tabbar class="footer-tab" swipeable>
       <ons-tab id='js-home-tab' label=" ホーム" icon="fa-home" badge="" active></ons-tab>
       <ons-tab id='js-topic-tab' label="トピック" icon="fa-battle-net"></ons-tab>
@@ -146,4 +129,3 @@
       <ons-tab id='js-group-tab' label="グループ" icon="fa-users"></ons-tab>
     </ons-tabbar>
   </ons-page>
-</body>

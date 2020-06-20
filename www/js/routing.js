@@ -41,43 +41,43 @@ document.addEventListener('init', function (event) {
 
 // methods declaration
 const moveToGroupPage = (animation = 'fade') => {
-  myNavigtor.pushPage('templates/group.html', {
+  myNavigtor.pushPage('../group.html', {
     animation
   });
 };
 
 const moveToHomeArrPage = (animation = 'fade') => {
-  myNavigtor.pushPage('templates/home/home-arrival-group.html', {
+  myNavigtor.pushPage('./home-arrival-group.html', {
     animation
   });
 };
 
 const moveToHomeNowPage = (animation = 'fade') => {
-  myNavigtor.pushPage('templates/home/home-now-group.html', {
+  myNavigtor.pushPage('./home-now-group.html', {
     animation
   });
 };
 
 const moveToHomeRcmddPage = (animation = 'fade') => {
-  myNavigtor.pushPage('templates/home/home-recommended-group.html', {
+  myNavigtor.pushPage('./home-recommended-group.html', {
     animation
   });
 };
 
 const moveToMatchMakingPage = (animation = 'fade') => {
-  myNavigtor.pushPage('templates/match-making.html', {
+  myNavigtor.pushPage('../match-making.html', {
     animation
   });
 };
 
 const moveToSchedulePage = (animation = 'fade') => {
-  myNavigtor.pushPage('templates/schedule.html', {
+  myNavigtor.pushPage('../schedule.html', {
     animation
   });
 };
 
 const moveToTopicPage = (animation = 'fade') => {
-  myNavigtor.pushPage('templates/topic.html', {
+  myNavigtor.pushPage('../topic.html', {
     animation
   });
 };
