@@ -5,4 +5,40 @@
     background-position: center;
 }
 
-#input_area {}
+#signin {
+    position: relative;
+    margin: auto;
+    width: 50%;
+}
+
+#input_area {
+    background-color: white;
+    position: absolute;
+    margin: auto;
+    margin-top: 250px;
+    width: 100%;
+    opacity: 0.8;
+}
+
+#another_action {
+    position: absolute;
+    width: 100%;
+    margin-top: 480px;
+}
+
+#product_title {
+    position: absolute;
+    width: 100%;
+    margin-top: 100px;
+}
+
+#signinId,
+#signinPassword {
+    width: 80%;
+    padding-left: 10%;
+}
+
+#signinButton {
+    margin-left: 10%;
+    margin-bottom: 10%;
+}

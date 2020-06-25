@@ -24,6 +24,7 @@
   <ons-template id="entry.html">
     <ons-page id="entry">
       <div id="signin">
+        <img id="product_title" src="image/nineteen_title.png" alt="product_title">
         <div id="input_area">
           <p>
             <ons-input id="signinId" modifier="underbar" placeholder="Username" float ng-model="page.username">
@@ -33,8 +34,14 @@
             <ons-input id="signinPassword" modifier="underbar" type="password" placeholder="Password" float
               ng-model="page.password"></ons-input>
           </p>
-          <p style="margin-top: 30px;">
-            <ons-button id="signinButton">Sign in</ons-button>
+          <ons-button id="signinButton">Sign in</ons-button>
+        </div>
+        <div id="another_action">
+          <p>
+            <font size="2">パスワードをお忘れの方は<a href="xxxx.html">こちら</a></font>
+          </p>
+          <p>
+            <font size="2">アカウントの作成は<a href="xxxx.html">こちら</a></font>
           </p>
         </div>
       </div>
