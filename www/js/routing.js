@@ -94,4 +94,3 @@ const moveToGropProfilePage = (animation = 'fade') => {
     animation
   });
 };
-
