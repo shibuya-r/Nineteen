@@ -1,0 +1,51 @@
+/* CSS for partner-group-profile.html */
+/* #partner-group-profile input {
+  display: inline;
+  font-size: 20px;
+} */
+
+#partner-group-profile li {
+  display: table-cell;
+  text-align: center;
+}
+
+#partner-group-profile p {
+  font-weight: bold;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+#partner-group-profile textarea {
+  border: 1px solid #000000;
+  display: block;
+  height: 130px;
+  margin: 0 auto;
+  padding: 10px;
+  resize: none;
+}
+
+#partner-group-profile ul {
+  padding: 0;
+}
+
+#partner-group-profile .group-profile-img {
+  border: 1px solid #000000;
+  margin: 0 auto;
+  width: 80%;
+}
+
+#partner-group-profile .member-image {
+  border: 1px solid #000000;
+  border-radius: 50%;
+}
+
+#partner-group-profile .member-name {
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 40%;
+  display: block;
+  margin: 0 auto;
+  max-width: 70%;
+  padding: 2px 0;
+  text-align: center;
+}

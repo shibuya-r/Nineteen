@@ -1,0 +1,133 @@
+<!-- 飲み会設定画面 -->
+<ons-page id="party-setting">
+  <div class="page__background background_whitesmoke"></div>
+  <ons-toolbar class="toolbar">
+    <div class="left">
+      <ons-back-button></ons-back-button>
+    </div>
+    <div class="center">
+      合コン設定
+    </div>
+  </ons-toolbar>
+
+  <div class='content-header'>
+    <input
+      type="button"
+      class="content-header-inner"
+      disabled
+      value="合コン情報">
+  </div>
+
+  <div class="container-block">
+    <table border="1">
+      <tr>
+        <th>
+          相手グループ
+        </th>
+        <th>
+          自分グループ
+        </th>
+        <th>
+          日程
+        </th>
+      </tr>
+      <tr>
+        <td>
+          美女軍団
+        </td>
+        <td>
+          医者EGG
+        </td>
+        <td>
+          2020/10/23(木)
+          <br>20:00~
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="container-block">
+    <div class="container-block-inner">
+    <p class="party-setting-title">
+      飲み会設定
+      <span class="party-setting-title-info">
+        ☆使用したいイベントを選択してください
+      </span>
+    </p>
+    <p class="party-setting-info">
+      ※両グループがリクエストしたイベントが合コンで使用できます
+    </p>
+    <ons-list>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-checkbox input-id="check-1"></ons-checkbox>
+        </label>
+        <label
+          for="check-1"
+          class="center"
+        >
+          ミニゲーム
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-checkbox input-id="check-2"></ons-checkbox>
+        </label>
+        <label
+          for="check-2"
+          class="center"
+        >
+          人気投票
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-checkbox input-id="check-3"></ons-checkbox>
+        </label>
+        <label
+          for="check-3"
+          class="center"
+        >
+          コール
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-checkbox input-id="check-4"></ons-checkbox>
+        </label>
+        <label
+          for="check-4"
+          class="center"
+        >
+          トピックトーク
+        </label>
+      </ons-list-item>
+      <ons-list-item tappable>
+        <label class="left">
+          <ons-checkbox input-id="check-5"></ons-checkbox>
+        </label>
+        <label
+          for="check-5"
+          class="center"
+        >
+          個別ビデオトーク
+        </label>
+      </ons-list-item>
+    </ons-list>
+    </div>
+  </div>
+
+  <div class="start-party-content">
+    <p class="start-party-msg">
+      ※開始時間になるとボタンがクリックできるようになります
+    </p>
+    <button
+      type="button"
+      class="shared-purple-btn"
+    >
+      <ons-icon icon="fa-glass-cheers"></ons-icon>
+      合コン開始！
+    </button>
+  </div>
+
+</ons-page>
