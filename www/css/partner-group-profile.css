@@ -1,0 +1,85 @@
+/* CSS for partner-group-profile.html */
+#partner-group-profile input {
+  display: inline;
+  font-size: 20px;
+}
+
+#partner-group-profile li {
+  display: table-cell;
+  text-align: center;
+}
+
+#partner-group-profile p {
+  font-weight: bold;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+#partner-group-profile textarea {
+  border: 1px solid #000000;
+  display: block;
+  height: 130px;
+  margin: 0 auto;
+  padding: 10px;
+  resize: none;
+}
+
+#partner-group-profile ul {
+  padding: 0;
+}
+
+
+
+#partner-group-profile .container-block {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  padding: 7px 0;
+}
+
+#partner-group-profile .group-name {
+  text-align: center;
+}
+
+#partner-group-profile .group-name-inner {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 30px;
+  color: #000000;
+  font-weight: bold;
+  margin: 5px;
+  padding: 3px 10px;
+}
+
+#partner-group-profile .group-profile-img {
+  border: 1px solid #000000;
+  margin: 0 auto;
+  width: 80%;
+}
+
+
+#partner-group-profile .member-image {
+  border: 1px solid #000000;
+  border-radius: 50%;
+}
+
+#partner-group-profile .member-name {
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 40%;
+  display: block;
+  margin: 0 auto;
+  max-width: 70%;
+  padding: 2px 0;
+  text-align: center;
+}
+
+#partner-group-profile .wanna-dring-btn {
+  font-weight: bold;
+  background-color: #483d8b;
+  border-radius: 45%;
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+  color: #FFFFFF;
+  padding: 10px 20px;
+}

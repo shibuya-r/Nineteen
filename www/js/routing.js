@@ -81,3 +81,4 @@ const moveToTopicPage = (animation = 'fade') => {
     animation
   });
 };
+
