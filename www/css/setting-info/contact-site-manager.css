@@ -1,0 +1,32 @@
+/* Styles for contanct-site-manager.html */
+#contact-site-manager button {
+  margin-top: 30px;
+}
+
+#contact-site-manager p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#contact-site-manager textarea {
+  height: 200px;
+  padding: 10px;
+  resize: none;  
+  width: 90%;
+}
+
+#contact-site-manager .container-block {
+  margin-top: 20px;
+}
+
+#contact-site-manager .container-block-inner {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+}
+
+#contact-site-manager .excuse-msg {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #777777;
+}
