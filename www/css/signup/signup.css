@@ -1,0 +1,40 @@
+/* This is a CSS file */
+
+#signup {
+    position: relative;
+    margin: auto;
+    width: 80%;
+}
+
+#input_area {
+    background-color: white;
+    position: absolute;
+    margin: auto;
+    margin-top: 70px;
+    width: 100%;
+    opacity: 0.8;
+    border: double 3px;
+}
+
+#userid,
+#password {
+    width: 80%;
+    padding-left: 10%;
+}
+
+#createAccount {
+    margin-top: 10px;
+    margin-left: 10%;
+    margin-bottom: 10%;
+}
+
+#terms_of_service {
+    margin-left: 10px;
+    margin-right: 10px;
+    border: solid 2px;
+    height: 300px;
+}
+
+#radio_agree {
+    position: absolute;
+}

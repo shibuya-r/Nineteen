@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Sign Up</title>
+  <title>Sign In</title>
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -33,8 +33,14 @@
             <ons-input id="signinPassword" modifier="underbar" type="password" placeholder="Password" float
               ng-model="page.password"></ons-input>
           </p>
-          <p style="margin-top: 30px;">
-            <ons-button id="signinButton">Sign in</ons-button>
+          <ons-button id="signinButton">Sign in</ons-button>
+        </div>
+        <div id="another_action">
+          <p>
+            <font size="2">パスワードをお忘れの方は<a href="xxxx.html">こちら</a></font>
+          </p>
+          <p>
+            <font size="2">アカウントの作成は<a href="templates/signup/signup.html">こちら</a></font>
           </p>
         </div>
       </div>

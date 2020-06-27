@@ -1,8 +1,42 @@
 .page__background {
-    background-image: url('../../image/index_image.jpg');
+    background-image: url('../../image/signin.jpg');
+    background-color: black;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-#input_area {}
+#signin {
+    position: relative;
+    margin: auto;
+    width: 80%;
+}
+
+#input_area {
+    background-color: white;
+    position: absolute;
+    margin: auto;
+    margin-top: 250px;
+    width: 100%;
+    opacity: 0.8;
+    border: double 3px;
+}
+
+#another_action {
+    color: white;
+    position: absolute;
+    margin-left: 20%;
+    width: 100%;
+    margin-top: 480px;
+}
+
+#signinId,
+#signinPassword {
+    width: 80%;
+    padding-left: 10%;
+}
+
+#signinButton {
+    margin-left: 10%;
+    margin-bottom: 10%;
+}
