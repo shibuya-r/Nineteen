@@ -1,0 +1,68 @@
+/* Styles for party-setting.html */
+#party-setting table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#party-setting th {
+  color: #bbbbbb;
+  font-size: 12px;
+  padding: 0 8px;
+}
+
+#party-setting tr {
+  font-weight: bold;
+}
+
+#party-setting .container-block {
+  margin-top: 20px;
+  padding: 20px 0;
+}
+
+#party-setting .container-block-inner {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+}
+
+#party-setting .content-header {
+  margin-top: 10px;
+}
+
+#party-setting .list-item {
+  background-color: #F5F5F5;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+#party-setting .party-setting-info {
+  font-weight: bold;
+  color: #777777;
+  font-size: 10px;
+  margin: 3px;
+  text-align: center;
+}
+
+#party-setting .party-setting-title {
+  font-weight: bold;
+  margin: 3px;
+  text-align: center;
+}
+
+#party-setting .party-setting-title-info {
+  font-size: 11px;
+}
+
+#party-setting .start-party-content {
+  margin-top: 40px;
+}
+
+#party-setting .start-party-msg {
+  margin: 0px 0px 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+}

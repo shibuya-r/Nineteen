@@ -1,4 +1,4 @@
-/* Styles for under HOME shared styles */
+/* Styles for under HOME shared layouts */
 /* Home related styles */
 #home-arr img,
 #home-now img,
@@ -46,6 +46,13 @@
 }
 
 /* page content header styles */
+.container-block {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  padding: 7px 0;
+  margin-bottom: 1px;
+}
+
 .content-header {
   text-align: center;
 }
@@ -60,4 +67,16 @@
   font-weight: bold;
   margin: 5px;
   padding: 3px 10px;
+}
+
+/* shared button styles */
+.shared-purple-btn {
+  background-color: #483d8b;
+  border-radius: 45%;
+  color: #FFFFFF;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 10px 20px;
 }

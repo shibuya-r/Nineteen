@@ -28,12 +28,6 @@
   padding: 0;
 }
 
-#partner-group-profile .container-block {
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  padding: 7px 0;
-}
-
 #partner-group-profile .group-profile-img {
   border: 1px solid #000000;
   margin: 0 auto;
@@ -54,15 +48,4 @@
   max-width: 70%;
   padding: 2px 0;
   text-align: center;
-}
-
-#partner-group-profile .wanna-dring-btn {
-  font-weight: bold;
-  background-color: #483d8b;
-  border-radius: 45%;
-  display: block;
-  margin: 0 auto;
-  font-size: 20px;
-  color: #FFFFFF;
-  padding: 10px 20px;
 }
