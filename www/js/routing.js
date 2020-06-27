@@ -37,6 +37,12 @@ document.addEventListener('init', function (event) {
   page.querySelector("#js-topic-tab").onclick = () => {
     moveToTopicPage();
   };
+  
+  // === Others ===
+  // Move to goup profile page
+  page.querySelector("#group-hoge").onclick = () => {
+    moveToGropProfilePage();
+  };
 });
 
 // methods declaration
@@ -78,6 +84,13 @@ const moveToSchedulePage = (animation = 'fade') => {
 
 const moveToTopicPage = (animation = 'fade') => {
   myNavigtor.pushPage('../topic.html', {
+    animation
+  });
+};
+
+const moveToGropProfilePage = (animation = 'fade') => {
+  // Currently, only the group that named group-hoge in recommended group page can move to it. After DB connected, parsing id that contain group name or unique id, then move the target group profile page.
+  myNavigtor.pushPage('../partner-group-profile.html', {
     animation
   });
 };
