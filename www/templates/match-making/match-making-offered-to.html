@@ -1,4 +1,4 @@
-<!-- マッチングリスト画面 -->
+<!-- マッチングリスト画面: オファー済み -->
 <ons-page id="match-making-offered-to">
   <div class="page__background background_whitesmoke"></div>
   <div class="wrapper">
@@ -35,13 +35,15 @@
       </button>
     </label>
   </div>
-  <div>オファー済み</div>
-  <div>
-    <ons-tabbar class="footer-tab" swipeable>
-      <ons-tab id="js-home-tab" label=" ホーム" icon="fa-home" badge=""></ons-tab>
-      <ons-tab id="js-topic-tab" label="トピック" icon="fa-battle-net" ></ons-tab>
-      <ons-tab id="js-match-making-tab" label="合コン" icon="fa-glass-cheers" active></ons-tab>
-      <ons-tab id="js-schedule-tab" label="スケジュール" icon="fa-calendar-alt"></ons-tab>
-      <ons-tab id="js-group-tab" label="グループ" icon="fa-users"></ons-tab>
-    </ons-tabbar>
+
+  <div class="js-matche-making-data-container"></div>
+  <div class="js-match-making-pagination-container pagination-container"></div>
+
+  <ons-tabbar class="footer-tab" swipeable>
+    <ons-tab id="js-home-tab" label=" ホーム" icon="fa-home" badge=""></ons-tab>
+    <ons-tab id="js-topic-tab" label="トピック" icon="fa-battle-net" ></ons-tab>
+    <ons-tab id="js-match-making-tab" label="合コン" icon="fa-glass-cheers" active></ons-tab>
+    <ons-tab id="js-schedule-tab" label="スケジュール" icon="fa-calendar-alt"></ons-tab>
+    <ons-tab id="js-group-tab" label="グループ" icon="fa-users"></ons-tab>
+  </ons-tabbar>
 </ons-page>
