@@ -90,7 +90,6 @@ const moveToHomeRcmddPage = (animation = 'fade') => {
   });
 };
 
-
 const moveToMatchMakingOfferedByPage = (animation = 'fade') => {
   myNavigtor.pushPage('../match-making/match-making-offered-by.html', {
     animation
