@@ -16,7 +16,7 @@ document.addEventListener('init', function (event) {
     <div class="container-block" >
     <div class="group-container">
     <div class='group-name'>${groupName}</div>
-    <img alt="" src="../../../assets/sample/sample-girls-group1.jpg" width="100%">
+    <img alt="" src="../../assets/sample/sample-girls-group1.jpg" width="100%">
     </div>
     </div>
   `
