@@ -1,0 +1,37 @@
+/* マッチングリスト画面 */
+#match-making-offered-by img,
+#match-making-offered-to img,
+#match-making-matched img {
+  margin-top: 10px;
+}
+
+#match-making-offered-by .container-block,
+#match-making-offered-to .container-block,
+#match-making-matched .container-block {
+  margin: 10px auto 0;
+  width: 90%;
+}
+
+#match-making-offered-by .group-container,
+#match-making-offered-to .group-container,
+#match-making-matched .group-container {
+  display: block;
+  margin: 10px auto 0;
+  width: 80%;
+}
+
+#match-making-offered-by .group-name,
+#match-making-offered-to .group-name,
+#match-making-matched .group-name {
+  border: 1px solid #000000;
+  border-radius: 50%;
+  display: inline;
+  padding: 5px 10px;
+}
+
+#match-making-offered-by .pagination-container,
+#match-making-offered-to .pagination-container,
+#match-making-matched .pagination-container {
+  margin: 0 auto;;
+  width: 80%;
+}

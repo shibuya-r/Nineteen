@@ -10,7 +10,10 @@ document.addEventListener('init', function (event) {
   myNavigtor = document.querySelector('#myNavigator');
 
   // === home header tabs ===
-  if (page.id === 'home-arr' || page.id === 'home-now' || page.id === 'home-rcmdd') {
+  if (page.id === 'home-arr'
+    || page.id === 'home-now'
+    || page.id === 'home-rcmdd')
+  {
     page.querySelector('#js-home-arr-btn').onclick = () => {
       moveToHomeArrPage();
     };
@@ -21,6 +24,7 @@ document.addEventListener('init', function (event) {
       moveToHomeRcmddPage();
     };
   }
+
   // === home footer tabs ===
   page.querySelector("#js-group-tab").onclick = () => {
     moveToGroupPage();
@@ -29,7 +33,7 @@ document.addEventListener('init', function (event) {
     moveToHomeRcmddPage();
   };
   page.querySelector("#js-match-making-tab").onclick = () => {
-    moveToMatchMakingPage();
+    moveToMatchMakingMatchedPage();
   };
   page.querySelector("#js-schedule-tab").onclick = () => {
     moveToSchedulePage();
@@ -37,7 +41,23 @@ document.addEventListener('init', function (event) {
   page.querySelector("#js-topic-tab").onclick = () => {
     moveToTopicPage();
   };
-  
+
+  // === match-making header tabs ===
+  if (page.id === 'match-making-matched'
+    || page.id === 'match-making-offered-by'
+    || page.id === 'match-making-offered-to')
+  {
+    page.querySelector("#js-matched").onclick = () => {
+      moveToMatchMakingMatchedPage();
+    };
+    page.querySelector("#js-match-offered-by").onclick = () => {
+      moveToMatchMakingOfferedByPage();
+    };
+    page.querySelector("#js-match-offered-to").onclick = () => {
+      moveToMatchMakingOfferedToPage();
+    };
+  }
+
   // === Others ===
   // Move to goup profile page
   page.querySelector("#group-hoge").onclick = () => {
@@ -70,8 +90,20 @@ const moveToHomeRcmddPage = (animation = 'fade') => {
   });
 };
 
-const moveToMatchMakingPage = (animation = 'fade') => {
-  myNavigtor.pushPage('../match-making.html', {
+const moveToMatchMakingOfferedByPage = (animation = 'fade') => {
+  myNavigtor.pushPage('../match-making/match-making-offered-by.html', {
+    animation
+  });
+};
+
+const moveToMatchMakingOfferedToPage = (animation = 'fade') => {
+  myNavigtor.pushPage('../match-making/match-making-offered-to.html', {
+    animation
+  });
+};
+
+const moveToMatchMakingMatchedPage = (animation = 'fade') => {
+  myNavigtor.pushPage('../match-making/match-making-matched.html', {
     animation
   });
 };
