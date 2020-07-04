@@ -1,0 +1,46 @@
+<!-- 自分グループプロフィール作成画面 -->
+<ons-page id="group-profile-register">
+  <div class="page__background background_whitesmoke"></div>
+  <ons-toolbar class="toolbar">
+    <div class="left">
+      <ons-back-button>戻る</ons-back-button>
+    </div>
+    <div class="center">グループプロフィール設定</div>
+    <div class="right">作成</div>
+  </ons-toolbar>
+
+  <ons-list>
+    <ons-list-item modifier="longdivider">
+      <p>グループネーム</p>
+      <div class="input-form">
+        <ons-input id="group-name" modifier="underbar" placeholder="ここへ入力" float></ons-input>
+      </div>
+    </ons-list-item>
+    <ons-list-item modifier="longdivider">
+      <p>メンバー</p>
+      <div class="input-form">
+        <ons-button modifier="light">追加</ons-button>
+      </div>
+    </ons-list-item>
+    <ons-list-item modifier="longdivider">
+      <p>プロフィール写真・ショートムービー</p>
+      <div class="upload">
+        <ons-button modifier="light">アップロード</ons-button>
+        <ons-input id="profile-img" input-id="upload" type="file" float style="display: none;"></ons-input>
+      </div>
+    </ons-list-item>
+    <ons-list-item modifier="longdivider">
+      <div class="container-block">
+        <p>グループ紹介</p>
+        <textarea id="group-profile" cols="45" name="group-profile" rows="6"></textarea>
+      </div>
+    </ons-list-item>
+  </ons-list>
+
+  <div class="group-profile-guide">
+    <div class="center">グループプロフィール作成ガイド</div>
+    <p class="register-profile-msg">
+      グループプロフィールの作成にお困りの方はまずこちらを参考にしてみましょう。
+    </p>
+  </div>
+</ons-page>
