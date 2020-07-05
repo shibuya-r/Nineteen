@@ -1,0 +1,35 @@
+/* CSS for profile-register.html */
+  #profile-register .input-form {
+    margin: 0 0 0 auto;
+  }
+  
+  #profile-register .upload {
+    margin: 0 auto;
+  }
+
+  #profile-register p {
+    font-weight: bold;
+    margin: 0 0;
+    max-width: 90%;
+  }
+  
+  #profile-register textarea {
+    border: 1px solid #000000;
+    display: block;
+    height: 130px;
+    margin: 0 auto;
+    padding: 10px;
+    resize: none;
+  }
+
+  #profile-register .profile-guide {
+    text-align: center;
+  }
+
+  #profile-register .register-profile-msg {
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  

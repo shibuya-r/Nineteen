@@ -1,0 +1,46 @@
+<!-- 自分プロフィール作成画面 -->
+<ons-page id="profile-register">
+  <div class="page__background background_whitesmoke"></div>
+  <ons-toolbar class="toolbar">
+    <div class="left">
+      <ons-back-button>戻る</ons-back-button>
+    </div>
+    <div class="center">プロフィール設定</div>
+    <div class="right">作成</div>
+  </ons-toolbar>
+
+  <ons-list>
+    <ons-list-item modifier="longdivider">
+      <p>ネーム</p>
+      <div class="input-form">
+        <ons-input id="name" modifier="underbar" placeholder="ここへ入力" float></ons-input>
+      </div>
+    </ons-list-item>
+    <ons-list-item modifier="longdivider">
+      <p>職業</p>
+      <div class="input-form">
+        <ons-input id="name" modifier="underbar" placeholder="ここへ入力" float></ons-input>
+      </div>
+    </ons-list-item>
+    <ons-list-item modifier="longdivider">
+      <p>プロフィール写真・ショートムービー</p>
+      <div class="upload">
+        <ons-button modifier="light">アップロード</ons-button>
+        <ons-input id="profile-img" input-id="upload" type="file" float style="display: none;"></ons-input>
+      </div>
+    </ons-list-item>
+    <ons-list-item modifier="longdivider">
+      <div class="container-block">
+        <p>自己紹介</p>
+        <textarea id="profile" cols="45" name="profile" rows="6"></textarea>
+      </div>
+    </ons-list-item>
+  </ons-list>
+
+  <div class="profile-guide">
+    <div class="center">プロフィール作成ガイド</div>
+    <p class="register-profile-msg">
+      プロフィールの作成にお困りの方はまずこちらを参考にしてみましょう。
+    </p>
+  </div>
+</ons-page>
