@@ -1,0 +1,35 @@
+/* CSS for group-profile-register.html */
+  #group-profile-register .input-form {
+    margin: 0 0 0 auto;
+  }
+  
+  #group-profile-register .upload {
+    margin: 0 auto;
+  }
+
+  #group-profile-register p {
+    font-weight: bold;
+    margin: 0 0;
+    max-width: 90%;
+  }
+  
+  #group-profile-register textarea {
+    border: 1px solid #000000;
+    display: block;
+    height: 130px;
+    margin: 0 auto;
+    padding: 10px;
+    resize: none;
+  }
+
+  #group-profile-register .group-profile-guide {
+    text-align: center;
+  }
+
+  #group-profile-register .register-profile-msg {
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  
