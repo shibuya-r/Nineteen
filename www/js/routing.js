@@ -36,7 +36,7 @@ document.addEventListener('init', function (event) {
     moveToMatchMakingMatchedPage();
   };
   page.querySelector("#js-schedule-tab").onclick = () => {
-    moveToSchedulePage();
+    moveToScheduleListPage();
   };
   page.querySelector("#js-topic-tab").onclick = () => {
     moveToTopicPage();
@@ -57,6 +57,23 @@ document.addEventListener('init', function (event) {
       moveToMatchMakingOfferedToPage();
     };
   }
+
+  // === match making party option on schedule-list page===
+  if (page.id === "schedule-list"
+    || page.id === "schedule-calendar")
+  {
+    if (page.id === "schedule-list") {
+      page.querySelector("#js-move-to-party-setting-sample").onclick = () => {
+        moveToPartySettingPage();
+      };
+    }
+    page.querySelector("#js-schedule-calendar-tab").onclick = () => {
+      moveToScheduleCalendarPage();
+    };
+    page.querySelector("#js-schedule-list-tab").onclick = () => {
+      moveToScheduleListPage();
+    };
+  } 
 
   // === Others ===
   // Move to goup profile page
@@ -108,8 +125,21 @@ const moveToMatchMakingMatchedPage = (animation = 'fade') => {
   });
 };
 
-const moveToSchedulePage = (animation = 'fade') => {
-  myNavigtor.pushPage('../schedule.html', {
+const moveToPartySettingPage = (animation = 'fade') => {
+  // Currently, only the match making party that has index 1 in schedule list page can move to it. After DB connected, parsing id, then move the target party setting page.
+  myNavigtor.pushPage('../party/party-setting.html', {
+    animation
+  });
+};
+
+const moveToScheduleCalendarPage = (animation = 'fade') => {
+  myNavigtor.pushPage('../schedule/schedule-calendar.html', {
+    animation
+  });
+};
+
+const moveToScheduleListPage = (animation = 'fade') => {
+  myNavigtor.pushPage('../schedule/schedule-list.html', {
     animation
   });
 };

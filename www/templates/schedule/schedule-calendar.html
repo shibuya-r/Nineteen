@@ -1,0 +1,42 @@
+<!-- 飲み会スケジュール画面: スケジュール一覧 -->
+<ons-page id="schedule-calendar">
+  <div class="page__background background_whitesmoke"></div>
+  <div class="wrapper">
+    <ons-toolbar class="toolbar">
+      <div class="left">
+        <ons-icon icon="fa-bell" size="20px" fixed-width="false" class="icon-white"></ons-icon>
+      </div>
+      <div class="center">Nineteen</div>
+      <div class="right">
+        <ons-icon icon="fa-cog" size="20px" fixed-width="false" class="icon-white"></ons-icon>
+      </div>
+    </ons-toolbar>
+    <input type="button" value="条件で探す" class="search-input search-input--material">
+
+    <div class="tabbar tabbar--top tabbar--material">
+      <label class="tabbar__item tabbar--material__item">
+        <input type="radio" id="js-schedule-list-tab" name="tabbar-material-a">
+        <button class="tabbar__button tabbar--material__button">
+          スケジュール一覧
+        </button>
+      </label>
+
+      <label class="tabbar__item tabbar--material__item">
+        <input type="radio" id="js-schedule-calendar-tab" name="tabbar-material-a" checked="checked">
+        <button class="tabbar__button tabbar--material__button">
+          カレンダー
+        </button>
+      </label>
+    </div>
+
+    <div class="container-default-heigh">
+    </div>
+
+    <ons-tabbar class="footer-tab" swipeable>
+      <ons-tab id="js-home-tab" label=" ホーム" icon="fa-home" badge=""></ons-tab>
+      <ons-tab id="js-topic-tab" label="トピック" icon="fa-battle-net"></ons-tab>
+      <ons-tab id="js-match-making-tab" label="合コン" icon="fa-glass-cheers"></ons-tab>
+      <ons-tab id="js-schedule-tab" label="スケジュール" icon="fa-calendar-alt" active></ons-tab>
+      <ons-tab id="js-group-tab" label="グループ" icon="fa-users"></ons-tab>
+    </ons-tabbar>
+</ons-page>

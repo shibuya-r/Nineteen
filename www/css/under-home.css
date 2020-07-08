@@ -34,3 +34,8 @@
   margin: 0 auto;
   padding: 10px 20px;
 }
+
+/* main contaner styles*/
+.container-default-heigh {
+  min-height: 85vh;
+}
