@@ -1,0 +1,79 @@
+<!-- 個人プロフィール閲覧画面 -->
+<ons-page id="profile-view">
+  <div class="page__background background_whitesmoke"></div>
+  <ons-toolbar class="toolbar">
+    <div class="left">
+      <ons-back-button>戻る</ons-back-button>
+    </div>
+    <div class="center">プロフィール</div>
+  </ons-toolbar>
+
+  <ons-list>
+    <ons-list-item modifier="longdivider">
+      <p class="title-left">ネーム</p>
+      <div class="input-form">
+        <ons-input id="name" modifier="underbar" float value="広瀬すず"></ons-input>
+      </div>
+    </ons-list-item>
+    <ons-list-item modifier="longdivider">
+      <p class="title-left">職業</p>
+      <div class="input-form">
+        <ons-input id="job" modifier="underbar" float value="看護師"></ons-input>
+      </div>
+    </ons-list-item>
+    <ons-list-item modifier="longdivider">
+      <p class="title-top">プロフィール写真・ショートムービー</p>
+      <div class="profile-img-movie">
+        <div class="swiper-container slide1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img class="profile-img" alt="profile-img" src="../assets/sample/sample-bijyo1.jpg" width="100%">
+            </div>
+            <div class="swiper-slide">
+              <img class="profile-img" alt="profile-img" src="../assets/sample/sample-bijyo2.jpg" width="100%">
+            </div>
+            <div class="swiper-slide">
+              <img class="profile-img" alt="profile-img" src="../assets/sample/sample-girls-group3.jpg" width="100%">
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </ons-list-item>
+    <ons-list-item modifier="longdivider">
+      <p class="title-top">所属グループ</p>
+      <div class="belong-group">
+        <div class="swiper-container slide2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img class="group-img" alt="group-img" src="../assets/sample/sample-girls-group1.jpg" width="100%">
+              <p class="slider-caption">グループA</p>
+            </div>
+            <div class="swiper-slide">
+              <img class="group-img" alt="group-img" src="../assets/sample/sample-girls-group2.jpg" width="100%">
+              <p class="slider-caption">グループB</p>
+            </div>
+            <div class="swiper-slide">
+              <img class="group-img" alt="group-img" src="../assets/sample/sample-girls-group3.jpg" width="100%">
+              <p class="slider-caption">グループC</p>
+            </div>
+            <div class="swiper-slide">
+              <img class="group-img" alt="group-img" src="../assets/sample/sample-girls-group1.jpg" width="100%">
+              <p class="slider-caption">グループD</p>
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </ons-list-item>
+    <ons-list-item modifier="longdivider">
+      <div class="container-block">
+        <p class="title-top">自己紹介</p>
+        <textarea id="profile" cols="45" name="profile" rows="6"
+          disabled>今日は可愛い子と呑めるということでワクワクしています。趣味は、女の子が一気で呑めなかった飲み残しを代打飲みすること。ちなみに、ほろよい2缶でぶっ潰れます。今日は気合入れてるので、ほろよい3缶いけるよう頑張ります！よろしく〜！</textarea>
+      </div>
+    </ons-list-item>
+  </ons-list>
+</ons-page>
