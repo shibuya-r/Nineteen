@@ -8,7 +8,7 @@ document.addEventListener('init', function (event) {
         prevEl: '.swiper-button-prev',
       },
       centeredSlides: true,
-      slidesPerView: 1.7,
+      slidesPerView: 1.2,
     });
   } else if (page.id === "profile-view") { // 個人プロフィール閲覧画面
     const swiper1 = new Swiper('.slide1', {
