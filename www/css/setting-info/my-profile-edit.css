@@ -1,0 +1,65 @@
+/* CSS for my-profile-edit.html */
+  #my-profile-edit .input-form {
+    margin: 0 0 0 auto;
+  }
+
+  #my-profile-edit .text-input--underbar {
+    font-weight: bold;
+  }
+
+  #my-profile-edit .profile-img-movie {
+    margin: 0 auto;
+  }
+
+  #my-profile-edit .swiper-container {
+    width: 200px;
+    height: 210px;
+  }
+
+  #my-profile-edit .profile-img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+
+  #my-profile-edit .slider-caption {
+    padding: 10px 20px;
+    margin: 0;
+    line-height: 1.5em;
+    color: #000000;
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+
+  #my-profile-edit .title-top {
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    max-width: 90%;
+  }
+
+  #my-profile-edit .title-left {
+    font-weight: bold;
+    max-width: 90%;
+  }
+  
+  #my-profile-edit textarea {
+    border: 1px solid #000000;
+    display: block;
+    height: 130px;
+    margin: 0 auto;
+    padding: 10px;
+    resize: none;
+    border-radius:10px;
+  }
+
+  #my-profile-edit .profile-guide {
+    text-align: center;
+  }
+
+  #my-profile-edit .register-profile-msg {
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  

@@ -27,5 +27,14 @@ document.addEventListener('init', function (event) {
       spaceBetween: 10,
       slidesPerView: 3,
     });
+  } else if (page.id === "my-profile-edit"
+    || page.id === "group-profile-edit") { // 自分プロフィール編集画面・グループプロフィール編集画面
+    const swiper = new Swiper('.swiper-container', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      slidesPerView: 1.0,
+    });
   }
 });
