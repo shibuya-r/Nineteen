@@ -1,0 +1,24 @@
+#help-list ons-list {
+  background-color: whitesmoke;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+#help-list ons-list-header {
+  background-color: #ffffff;
+  font-weight: bold;
+}
+
+#help-list u {
+  font-weight: bold;
+}
+
+#help-list .list-item {
+  background-color: #ffffff;
+  border-bottom: 1px solid #000000;
+}
+
+#help-list .list-wrapper {
+  border: 1px solid #000000;
+  margin-top: 20px;
+}
