@@ -80,6 +80,10 @@ document.addEventListener('init', function (event) {
   page.querySelector("#group-hoge").onclick = () => {
     moveToGropProfilePage();
   };
+  // Move to member profile page
+  page.querySelector("#member-hoge").onclick = () => {
+    moveToMemberProfilePage();
+  };
 });
 
 // methods declaration
@@ -153,6 +157,13 @@ const moveToTopicPage = (animation = 'fade') => {
 const moveToGropProfilePage = (animation = 'fade') => {
   // Currently, only the group that named group-hoge in recommended group page can move to it. After DB connected, parsing id that contain group name or unique id, then move the target group profile page.
   myNavigtor.pushPage('../partner-group-profile.html', {
+    animation
+  });
+};
+
+const moveToMemberProfilePage = (animation = 'fade') => {
+  // Currently, only the member that named member-hoge in group profile page can move to it. After DB connected, parsing id that contain member name or unique id, then move the target profile page.
+  myNavigtor.pushPage('../profile-view.html', {
     animation
   });
 };

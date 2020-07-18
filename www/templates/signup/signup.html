@@ -1,60 +1,65 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>Sign Up</title>
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/signup/signup.css">
-  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-  <script type="text/javascript" src="../../js/lib/jsbn.js"></script>
-  <script type="text/javascript" src="../../js/lib/jsbn2.js"></script>
-  <script type="text/javascript" src="../../js/lib/sjcl.js"></script>
-  <script type="text/javascript" src="../../js/lib/aws-sdk.min.js"></script>
-  <script type="text/javascript" src="../../js/lib/aws-cognito-sdk.min.js"></script>
-  <script type="text/javascript" src="../../js/lib/amazon-cognito-identity.min.js"></script>
-  <script type="text/javascript" src="../../js/lib/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="../../js/login.js"></script>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/signup/signup.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/jsbn.js"></script>
+    <script type="text/javascript" src="../../js/lib/jsbn2.js"></script>
+    <script type="text/javascript" src="../../js/lib/sjcl.js"></script>
+    <script type="text/javascript" src="../../js/lib/aws-sdk.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/aws-cognito-sdk.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/amazon-cognito-identity.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../../js/login.js"></script>
 </head>
 
 <body>
-  <ons-navigator swipeable id="myNavigator" page="entry.html"></ons-navigator>
-  <ons-template id="entry.html">
-    <ons-page id="entry">
-      <div id="signup">
-        <div id="input_area">
-          <p>
-            <ons-input id="userid" modifier="underbar" placeholder="User ID" float ng-model="page.username">
-            </ons-input>
-          </p>
-          <p>
-            <ons-input id="password" modifier="underbar" type="Password" placeholder="Password" float
-              ng-model="page.password"></ons-input>
-          </p>
-          <div id="terms_of_service">
-            <h3>利用規約</h3>
-            <p>
-              ------------------------------------------<br>
-              ------------------------------------------<br>
-              ------------------------------------------<br>
-              ------------------------------------------<br>
-              ------------------------------------------<br>
-              ------------------------------------------<br>
-              ------------------------------------------<br>
-              ------------------------------------------<br>
-              ------------------------------------------<br>
-              ------------------------------------------<br>
-            </p>
-            <ons-radio id="radio_agree" name="group" value="agree">同意する</ons-radio>
-          </div>
+    <ons-navigator swipeable id="myNavigator" page="entry.html"></ons-navigator>
+    <ons-template id="entry.html">
+        <ons-page id="entry">
+            <div id="signup">
+                <div id="input_area">
+                    <p>
+                        <ons-input id="email" modifier="underbar" type="Email" placeholder="Email" float
+                            ng-model="page.email">
+                        </ons-input>
+                    </p>
+                    <p>
+                        <ons-input id="userid" modifier="underbar" placeholder="User ID" float ng-model="page.username">
+                        </ons-input>
+                    </p>
+                    <p>
+                        <ons-input id="password" modifier="underbar" type="Password" placeholder="Password" float
+                            ng-model="page.password"></ons-input>
+                    </p>
+                    <div id="terms_of_service">
+                        <h3>利用規約</h3>
+                        <p>
+                            ------------------------------------------<br>
+                            ------------------------------------------<br>
+                            ------------------------------------------<br>
+                            ------------------------------------------<br>
+                            ------------------------------------------<br>
+                            ------------------------------------------<br>
+                            ------------------------------------------<br>
+                            ------------------------------------------<br>
+                            ------------------------------------------<br>
+                            ------------------------------------------<br>
+                        </p>
+                        <ons-radio id="radio_agree" name="group" value="agree">同意する</ons-radio>
+                    </div>
 
-          <ons-button id="createAccount">Sign up</ons-button>
-        </div>
-      </div>
-    </ons-page>
-  </ons-template>
+                    <ons-button id="createAccount">Sign up</ons-button>
+                </div>
+            </div>
+        </ons-page>
+    </ons-template>
 </body>
 
 </html>

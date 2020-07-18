@@ -17,7 +17,8 @@
 }
 
 #userid,
-#password {
+#password,
+#email {
     width: 80%;
     padding-left: 10%;
 }
