@@ -1,0 +1,90 @@
+/* CSS for group-profile-edit.html */
+  #group-profile-edit .input-form {
+    margin: 0 0 0 auto;
+  }
+
+  #group-profile-edit .text-input--underbar {
+    font-weight: bold;
+  }
+  
+  #group-profile-edit ul {
+    padding: 0;
+  }  
+
+  #group-profile-edit li {
+    display: table-cell;
+    text-align: center;
+  }
+  
+  #group-profile-edit .member-image {
+    border: 1px solid #000000;
+    border-radius: 50%;
+  }
+  
+  #group-profile-edit .member-name {
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 40%;
+    display: block;
+    margin: 0 auto;
+    max-width: 70%;
+    padding: 2px 0;
+    text-align: center;
+  }  
+
+  #group-profile-edit .profile-img-movie {
+    margin: 0 auto;
+  }
+
+  #group-profile-edit .swiper-container {
+    width: 200px;
+    height: 210px;
+  }
+
+  #group-profile-edit .profile-img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+
+  #group-profile-edit .slider-caption {
+    padding: 10px 20px;
+    margin: 0;
+    line-height: 1.5em;
+    color: #000000;
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+
+  #group-profile-edit .title-top {
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    max-width: 90%;
+  }
+
+  #group-profile-edit .title-left {
+    font-weight: bold;
+    max-width: 90%;
+  }
+  
+  #group-profile-edit textarea {
+    border: 1px solid #000000;
+    display: block;
+    height: 130px;
+    margin: 0 auto;
+    padding: 10px;
+    resize: none;
+    border-radius:10px;
+  }
+
+  #group-profile-edit .profile-guide {
+    text-align: center;
+  }
+
+  #group-profile-edit .register-profile-msg {
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  

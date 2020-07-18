@@ -1,0 +1,97 @@
+<!-- グループプロフィール編集画面 -->
+<ons-page id="group-profile-edit">
+  <div class="page__background background_whitesmoke"></div>
+  <ons-toolbar class="toolbar">
+    <div class="left">
+      <ons-back-button>戻る</ons-back-button>
+    </div>
+    <div class="center">グループプロフィール設定</div>
+    <div class="right">更新</div>
+  </ons-toolbar>
+
+  <ons-list>
+    <ons-list-item modifier="longdivider">
+      <p class="title-left">グループネーム</p>
+      <div class="input-form">
+        <ons-input id="name" modifier="underbar" float value="医者EGG"></ons-input>
+      </div>
+    </ons-list-item>
+    <ons-list-item modifier="longdivider">
+      <p class="title-left">メンバー</p>
+      <div class="input-form">
+        <ul>
+          <li>
+            <img
+              id="member-hoge"
+              class="member-image"
+              alt="member-image"
+              src="../../assets/sample/sample-bijyo2.jpg"
+              width="90%"
+            >
+            <div class="member-name">
+              タロー
+            </div>
+          </li>
+          <li>
+            <img
+              class="member-image"
+              alt="member-image"
+              src="../../assets/sample/sample-bijyo2.jpg"
+              width="90%">
+            <div class="member-name">
+              ゆう
+            </div>
+          </li>
+          <li>
+            <img
+              class="member-image"
+              alt="member-image"
+              src="../../assets/sample/sample-bijyo2.jpg"
+              width="90%"
+            >
+            <div class="member-name">
+              ジロー
+            </div>
+          </li>
+        </ul>
+      </div>
+    </ons-list-item>
+    <ons-list-item modifier="longdivider">
+      <p class="title-top">プロフィール写真・ショートムービー</p>
+      <div class="profile-img-movie">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img class="profile-img" alt="profile-img" src="../../assets/sample/sample-bijyo1.jpg" width="100%">
+            </div>
+            <div class="swiper-slide">
+              <img class="profile-img" alt="profile-img" src="../../assets/sample/sample-bijyo2.jpg" width="100%">
+            </div>
+            <div class="swiper-slide">
+              <img class="profile-img" alt="profile-img" src="../../assets/sample/sample-girls-group3.jpg" width="100%">
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+      <ons-fab class="icon-darkslateblue">
+        <ons-icon icon="md-plus"></ons-icon>
+      </ons-fab>
+    </ons-list-item>
+    <ons-list-item modifier="longdivider">
+      <div>
+        <p class="title-top">自己紹介</p>
+        <textarea id="profile" cols="45" name="profile"
+          rows="6">今日は可愛い子と呑めるということでワクワクしています。趣味は、女の子が一気で呑めなかった飲み残しを代打飲みすること。ちなみに、ほろよい2缶でぶっ潰れます。今日は気合入れてるので、ほろよい3缶いけるよう頑張ります！よろしく〜！</textarea>
+      </div>
+    </ons-list-item>
+  </ons-list>
+
+  <div class="group-profile-guide">
+    <div class="center">グループプロフィール作成ガイド</div>
+    <p class="register-profile-msg">
+      グループプロフィールの作成にお困りの方はまずこちらを参考にしてみましょう。
+    </p>
+  </div>
+</ons-page>
