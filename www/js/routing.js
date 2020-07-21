@@ -23,6 +23,14 @@ document.addEventListener('init', function (event) {
       moveToHomeRcmddPage();
     };
   }
+  if (page.id === 'setting-info') {
+    page.querySelector("#help-list").onclick = () => {
+      moveToHelpListPage();
+    };
+    page.querySelector("#my-profile-edit").onclick = () => {
+      moveToProfileEditPage();
+    };
+  }
   page.querySelector("#go-setting-info").onclick = () => {
     moveToSettingInfoPage();
   };
@@ -169,6 +177,18 @@ const moveToMemberProfilePage = (animation = 'fade') => {
 
 const moveToSettingInfoPage = (animation = 'fade') => {
   myNavigtor.pushPage('../setting-info/main.html', {
+    animation
+  });
+};
+
+const moveToHelpListPage = (animation = 'fade') => {
+  myNavigtor.pushPage('../setting-info/help-list.html', {
+    animation
+  });
+};
+
+const moveToProfileEditPage = (animation = 'fade') => {
+  myNavigtor.pushPage('../setting-info/my-profile-edit.html', {
     animation
   });
 };
