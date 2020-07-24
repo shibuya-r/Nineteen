@@ -34,6 +34,9 @@ document.addEventListener('init', function (event) {
     page.querySelector("#terms-list").onclick = () => {
       moveToTermsListPage();
     };
+    page.querySelector("#my-authentication-edit").onclick = () => {
+      moveToEditAuthInfoPage();
+    };
   }
   page.querySelector("#go-setting-info").onclick = () => {
     moveToSettingInfoPage();
@@ -199,6 +202,12 @@ const moveToProfileEditPage = (animation = 'fade') => {
 
 const moveToTermsListPage = (animation = 'fade') => {
   myNavigtor.pushPage('../setting-info/terms-list.html', {
+    animation
+  });
+};
+
+const moveToEditAuthInfoPage = (animation = 'fade') => {
+  myNavigtor.pushPage('../setting-info/edit-auth-info.html', {
     animation
   });
 };
