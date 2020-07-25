@@ -4,6 +4,7 @@
   border: 1px solid #000000;
   border-radius: 15%;
   margin: 1px;
+  overflow: hidden;
 }
 
 #party-room ons-icon {
@@ -12,6 +13,14 @@
   color: #696969;
   padding: 4px 7px;
   margin: 10% 15% 10% 0;
+}
+
+#party-room video {
+  border-radius: 15%;
+  background-color: #111;
+  /* object-fit: fill; */
+  height: 100%;
+  width: 100%;
 }
 
 #party-room .container {
@@ -46,14 +55,14 @@
 }
 
 #party-room .container-video-top {
-  height: 60%;
-  margin: 1% 0 1% 0;
+  height: 47%; /*[DEBUG]: 相手グループ:自分グループの動画表示サイズは6:4程度にする@2020/07/25:numaC  */
+  margin: 2px 0 1% 0;
   width: 100%;
 }
 
 #party-room .container-video-bottom {
   margin: 0 0 1% 0;
-  height: 35%;
+  height: 45%; /*[DEBUG]: 相手グループ:自分グループの動画表示サイズは6:4程度にする@2020/07/25:numaC  */
   width: 100%;
 }
 

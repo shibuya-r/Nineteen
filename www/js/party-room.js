@@ -1,89 +1,49 @@
 "use strct"
+import { RoomCommunication } from '../../js/modules/skyway-room-communication.js';
+import {
+  RoomComposer,
+  genRoomDataSet
+} from '../../js/modules/room-composer.js';
+
 document.addEventListener('init', function (event) {
   const page = event.target;
   if (page.id !== "party-room") {
     return
   }
-  // Config of variables
-  let memberName = "";
-  let groupName = "";
-  let peerID = "";
 
-
-  // Config of selectors
-  const groupLocalText = document.getElementById('js-group-local-text');
+  // 精査中
   const groupMessages = document.getElementById('js-group-messages');
-  const header = document.getElementById("js-header");
-  const joinTrigger = document.getElementById('js-join-trigger');
-  const leaveTrigger = document.getElementById('js-leave-trigger');
-  const localVideo = document.getElementById('js-local-stream');
-  const personalLocalText = document.getElementById('js-personal-local-text');
   const personalMessages = document.getElementById('js-personal-messages');
-  const receiverOption = document.getElementById('js-receiver-option');
-  const remoteVideos = document.getElementById('js-remote-streams');
-  const roomId = document.getElementById('js-room-id');
   const sendGroupTrigger = document.getElementById('js-group-send-trigger');
-  const sendPersonalTrigger = document.getElementById('js-personal-send-trigger');
+  
+  
+  // Config of selectors
+  const chatTrigger = document.getElementById('js-chat-trigger');
+  const containerMenu = document.getElementById('container-menu');
+  const menu = document.getElementById('menu');
+  const groupmateVideo1 = document.getElementById('js-groupmate-video1');
+  const groupmateVideo2 = document.getElementById('js-groupmate-video2');
+  const leaveTrigger = document.getElementById('js-leave-trigger');
+  const myVideo = document.getElementById('js-my-video');
+  const partnerVideo1 = document.getElementById('js-partner-video1');
+  const partnerVideo2 = document.getElementById('js-partner-video2');
+  const partnerVideo3 = document.getElementById('js-partner-video3');
+  const remoteVideos = document.getElementsByTagName("video");
+  let localStream = "";
+  let myGroup = "";
+  let myPeerID = "";
+  let peer = "";
+  let room = "";
 
+  // Set EventListners
+  chatTrigger.addEventListener('click', () => {
+    menu.open();
+    containerMenu.style.display = "none";
+  });
 
-  // ===================
-  // const assignGroupName = memberName => {
-  //   if ( memberName == "A"
-  //     || memberName == "B"
-  //     || memberName == "C"
-  //   ) {
-  //     return "male"
-  //   } else {
-  //     return "female"
-  //   }
-  // };
+  leaveTrigger.addEventListener('click', () => room.close(), { once: true });
 
-
-  // const genHeaderMsg = () => {
-  //   header.textContent = `[INFO]: ${groupName} / ${memberName} / ${peerID}`;
-  // };
-
-
-  // const genMemberDataSet = () => {
-  //   if (isAvailableHash(location.hash)) {
-  //     memberName = genMemberName(location.hash);
-  //     groupName = assignGroupName(memberName);
-  //     peerID = `${groupName}${memberName}`;
-  //   } else {
-  //     console.error("Set member name with hash on URL.")
-  //   }
-  // };
-
-
-  // const genMemberName = urlHash => {
-  //   return replaseHash(urlHash).toUpperCase()
-  // };
-
-
-  // const genPersonalMsgOptions = () => {
-  //   if (groupName == "male") {
-  //     receiverOption.insertAdjacentHTML('afterbegin', `<option value="femaleD">femaleD</option><option value="femaleE">femaleE</option><option value="femaleF">femaleF</option>`);
-  //   } else {
-  //     receiverOption.insertAdjacentHTML('afterbegin', `<option value="maleA">maleA</option><option value="maleB">maleB</option><option value="maleC">maleC</option>`);
-  //   }
-  // };
-
-
-  // const isAvailableHash = trgHash => {
-  //   if ( trgHash == "#A" || trgHash == "#a"
-  //     || trgHash == "#B" || trgHash == "#b"
-  //     || trgHash == "#C" || trgHash == "#c"
-  //     || trgHash == "#D" || trgHash == "#d"
-  //     || trgHash == "#E" || trgHash == "#e"
-  //     || trgHash == "#F" || trgHash == "#f"
-  //     && trgHash != "" )
-  //   {
-  //     return true
-  //   } else {
-  //     return false
-  //   }
-  // };
-
+  // Set static methods
   const isReceiver = trgMember => {
     return trgMember == peerID;
   };
@@ -92,65 +52,88 @@ document.addEventListener('init', function (event) {
     return senderGroupName == groupName;
   };
 
-
-  // const replaseHash = str => {
-  //   return str.replace("#", "")
-  // }
-
-
-  // ==== Inital calling methods ====
-  // genMemberDataSet();
-  // genHeaderMsg();
-  // genPersonalMsgOptions();
-  // =================================
-
+  // Peerの生成 / カメラの起動
   (async function main() {
-    const localStream = await navigator.mediaDevices
-      .getUserMedia({
+    myGroup = genRoomDataSet(location.hash);
+    myPeerID = `${myGroup.myGroupName}-${myGroup.myName}`;
+    console.info(`[INFO]: ${myGroup.myGroupName} / ${myGroup.myName} / ${myPeerID}`);
+    partnerGroupNum = myGroup.partnerMembers.length;
+
+    localStream = await navigator.mediaDevices.getUserMedia(
+      {
         audio: true,
         video: true,
-      })
-      .catch(console.error);
+      }
+    ).catch(console.error);
+    myVideo.muted = true;
+    myVideo.srcObject = localStream;
+    myVideo.playsInline = true;
+    await myVideo.play().catch(console.error);
 
-    // Render local stream
-    localVideo.muted = true;
-    localVideo.srcObject = localStream;
-    localVideo.playsInline = true;
-    await localVideo.play().catch(console.error);
-
-    const peer = (window.peer = new window.Peer(
-      `${peerID}`, // can put any peerID
+    peer = (window.peer = new window.Peer(
+      `${myPeerID}`, // can put any peerID
       {
       key: window.__SKYWAY_KEY__,
       debug: 1,
     }))
+    peer.on('error', console.error);
+  })();
 
-    joinTrigger.addEventListener('click', () => {
-    if (!peer.open) {
-      return;
+  // Peer生成の監視
+  const watchIsPeerCreated = setInterval(function () {
+    if ( peer.open ) {
+      clearInterval(watchIsPeerCreated);
+      startRoomConnection();
     }
+  }, 1000);
 
-    // const room = peer.joinRoom(roomId.value, {
-    const room = peer.joinRoom("hoge", {
+  // RoomConnectionの開始
+  const startRoomConnection = () => {
+    room = peer.joinRoom("hoge", {
       mode: "mesh",
       stream: localStream,
     });
-    console.log(room)
+
     room.once('open', () => {
       console.log("=== You joined ===");
-      // groupMessages.textContent += '=== You joined ===\n';
     });
+
     room.on('peerJoin', peerId => {
-      groupMessages.textContent += `=== ${peerId} joined ===\n`;
+      console.log(`=== ${peerId} joined ===\n`);
     });
 
     room.on('stream', async stream => {
-      const newVideo = document.createElement('video');
-      newVideo.srcObject = stream;
-      newVideo.playsInline = true;
-      newVideo.setAttribute('data-peer-id', stream.peerId);
-      remoteVideos.append(newVideo);
-      await newVideo.play().catch(console.error);
+      let newRemoteVideo = "";
+      let remoteVideoGroup = stream.peerId.split("-")[0];
+      if (groupmateVideo1.srcObject === null
+        && remoteVideoGroup === myGroup.myGroupName)
+      {
+        newRemoteVideo = groupmateVideo1;
+
+      } else if (groupmateVideo2.srcObject === null
+        && remoteVideoGroup === myGroup.myGroupName)
+      {
+        newRemoteVideo = groupmateVideo2;
+
+      } else if (partnerVideo1.srcObject === null
+        && remoteVideoGroup === myGroup.partnerGroupName)
+      {
+        newRemoteVideo = partnerVideo1;
+
+      } else if (partnerVideo2.srcObject === null
+        && remoteVideoGroup === myGroup.partnerGroupName)
+      {
+        newRemoteVideo = partnerVideo2;
+
+      } else if (partnerVideo3.srcObject === null
+        && remoteVideoGroup === myGroup.partnerGroupName)
+      {
+        newRemoteVideo = partnerVideo3;
+      }
+      newRemoteVideo.srcObject = stream;
+      newRemoteVideo.playsInline = true;
+      newRemoteVideo.setAttribute('data-peer-id', stream.peerId);
+      await newRemoteVideo.play().catch(console.error);
     });
 
     room.on('data', ({ data, src }) => {
@@ -164,51 +147,34 @@ document.addEventListener('init', function (event) {
     });
 
     room.on('peerLeave', peerId => {
-      const remoteVideo = remoteVideos.querySelector(
-        `[data-peer-id=${peerId}]`
-      );
+      let remoteVideo = "";
+      for ( let i = 0; i < remoteVideos.length; i++ ) {
+        if (remoteVideos[i].getAttribute("data-peer-id") === peerId ) {
+          remoteVideo = remoteVideos[i];
+        }
+      }
       remoteVideo.srcObject.getTracks().forEach(track => track.stop());
       remoteVideo.srcObject = null;
-      remoteVideo.remove();
-
-      groupMessages.textContent += `=== ${peerId} left ===\n`;
+      console.info(`=== ${peerId} left ===`);
     });
 
     room.once('close', () => {
-      sendGroupTrigger.removeEventListener('click', onClickGroupSend);
-      groupMessages.textContent += '== You left ===\n';
-      Array.from(remoteVideos.children).forEach(remoteVideo => {
-        remoteVideo.srcObject.getTracks().forEach(track => track.stop());
+      // sendGroupTrigger.removeEventListener('click', onClickGroupSend);
+      console.info('== You left ===');
+      Array.from(remoteVideos).forEach(remoteVideo => {
         remoteVideo.srcObject = null;
-        remoteVideo.remove();
       });
     });
-
-    sendGroupTrigger.addEventListener('click', onClickGroupSend);
-    sendPersonalTrigger.addEventListener('click', onClickPersonalSend);
-    leaveTrigger.addEventListener('click', () => room.close(), { once: true });
-
-    function onClickGroupSend() {
-      const sendData = {
-        trg: `${groupName}`,
-        content: groupLocalText.value
-      };
-      room.send(sendData);
-      groupMessages.textContent += `You: ${groupLocalText.value}\n`;
-      groupLocalText.value = '';
-    };
     
-    function onClickPersonalSend() {
-      const sendData  = {
-        trg: receiverOption.value,
-        content: personalLocalText.value
-      };
-      room.send(sendData);
-      personalMessages.textContent += `You: ${personalLocalText.value}\n`;
-      personalLocalText.value = '';
-    };
-    });
-
-    peer.on('error', console.error);
-  })();
+    // sendGroupTrigger.addEventListener('click', onClickGroupSend);
+    // function onClickGroupSend() {
+    //   const sendData = {
+    //     trg: `${groupName}`,
+    //     content: groupLocalText.value
+    //   };
+    //   room.send(sendData);
+    //   groupMessages.textContent += `You: ${groupLocalText.value}\n`;
+    //   groupLocalText.value = '';
+    // };
+  };
 });

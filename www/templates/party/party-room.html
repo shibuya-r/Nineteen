@@ -1,80 +1,89 @@
 <!-- 飲み会ホーム画面 -->
 <ons-page id="party-room">
+  <ons-splitter>
+    <ons-splitter-side id="menu" side="right" width="280px" collapse swipeable>
+      <ons-page>
+      </ons-page>
+    </ons-splitter-side>
+  </ons-splitter>
+
   <div class="page__background background_whitesmoke"></div>
   <div class="container">
     <div class="containaer-video">
       <ons-row class="container-video-top">
+        <ons-col id="op-video-box-left">
+          <video id="js-partner-video1"></video>
+        </ons-col >
         <ons-col>
-          <div>blue</div>
+          <video id="js-partner-video2"></video>
         </ons-col>
         <ons-col>
-          <div>red</div>
-        </ons-col>
-        <ons-col>
-          <div>yellow</div>
+          <video id="js-partner-video3"></video>
         </ons-col>
       </ons-row>
 
       <ons-row class="container-video-bottom">
         <ons-col>
-          <div>green</div>
+          <video id="js-my-video"></video>
         </ons-col>
         <ons-col>
-          <div>aqua</div>
+          <video id="js-groupmate-video1"></video>
         </ons-col>
         <ons-col>
-          <div>purple</div>
+          <video id="js-groupmate-video2"></video>
         </ons-col>
       </ons-row>
     </div>
 
-    <div class="container-menu">
+    <div id="container-menu" class="container-menu">
       <div class="container-menu-icons">
-        <ons-icon icon="comments" size="35px"></ons-icon>
-        <ons-icon icon="sign-out-alt" size="35px"></ons-icon>
+        <ons-icon icon="comments" size="35px" id="js-chat-trigger"></ons-icon>
+        <ons-icon icon="sign-out-alt" size="35px" id="js-leave-trigger"></ons-icon>
       </div>
     </div>
-      <!-- <div class="room">
-        <div>
-          <video id="js-local-stream"></video>
-          <input type="text" placeholder="Room Name" id="js-room-id">
-          <button id="js-join-trigger">Join</button>
-          <button id="js-leave-trigger">Leave</button>
-        </div>
 
-        <div class="remote-streams" id="js-remote-streams"></div>
-        <ons-row class="remote-streams" id="js-remote-streams">
-          <ons-col width="50px">
-            <ons-icon icon="fa-twitter"></ons-icon>
-          </ons-col>
-          <ons-col>Text</ons-col>
-        </ons-row>
-
-        <ons-row class="remote-streams" id="js-remote-streams">
-          <ons-col width="50px">
-            <ons-icon icon="fa-twitter"></ons-icon>
-          </ons-col>
-          <ons-col>Text</ons-col>
-        </ons-row>
-        <div>
-          <video id="js-local-stream"></video>
-          <input type="text" placeholder="Room Name" id="js-room-id">
-          <button id="js-join-trigger">Join</button>
-          <button id="js-leave-trigger">Leave</button>
-        </div>
-
-        <div>
-          <pre class="messages" id="js-group-messages"></pre>
-          <input type="text" id="js-group-local-text">
-          <button id="js-group-send-trigger">GroupSend</button>
-        </div>
-        <div>
-          <pre class="messages" id="js-personal-messages"></pre>
-          <select id="js-receiver-option">
-          </select>
-          <input type="text" id="js-personal-local-text">
-          <button id="js-personal-send-trigger">PersonalSend</button>
-        </div>
-      </div> -->
   </div>
 </ons-page>
+
+<!-- <div class="room">
+  <div>
+    <video id="js-local-stream"></video>
+    <input type="text" placeholder="Room Name" id="js-room-id">
+    <button id="js-join-trigger">Join</button>
+    <button id="js-leave-trigger">Leave</button>
+  </div>
+
+  <div class="remote-streams" id="js-remote-streams"></div>
+  <ons-row class="remote-streams" id="js-remote-streams">
+    <ons-col width="50px">
+      <ons-icon icon="fa-twitter"></ons-icon>
+    </ons-col>
+    <ons-col>Text</ons-col>
+  </ons-row>
+
+  <ons-row class="remote-streams" id="js-remote-streams">
+    <ons-col width="50px">
+      <ons-icon icon="fa-twitter"></ons-icon>
+    </ons-col>
+    <ons-col>Text</ons-col>
+  </ons-row>
+  <div>
+    <video id="js-local-stream"></video>
+    <input type="text" placeholder="Room Name" id="js-room-id">
+    <button id="js-join-trigger">Join</button>
+    <button id="js-leave-trigger">Leave</button>
+  </div>
+
+  <div>
+    <pre class="messages" id="js-group-messages"></pre>
+    <input type="text" id="js-group-local-text">
+    <button id="js-group-send-trigger">GroupSend</button>
+  </div>
+  <div>
+    <pre class="messages" id="js-personal-messages"></pre>
+    <select id="js-receiver-option">
+    </select>
+    <input type="text" id="js-personal-local-text">
+    <button id="js-personal-send-trigger">PersonalSend</button>
+  </div>
+</div> -->
