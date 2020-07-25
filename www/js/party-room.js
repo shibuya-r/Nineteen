@@ -19,6 +19,7 @@ document.addEventListener('init', function (event) {
   
   // Config of selectors
   const chatTrigger = document.getElementById('js-chat-trigger');
+  const closeTrigger = document.getElementById('js-close-trigger');
   const containerMenu = document.getElementById('container-menu');
   const menu = document.getElementById('menu');
   const groupmateVideo1 = document.getElementById('js-groupmate-video1');
@@ -41,6 +42,11 @@ document.addEventListener('init', function (event) {
     containerMenu.style.display = "none";
   });
 
+  closeTrigger.addEventListener('click', () => {
+    menu.close();
+    containerMenu.style.display = "inline-block";
+  });
+
   leaveTrigger.addEventListener('click', () => room.close(), { once: true });
 
   // Set static methods
@@ -57,7 +63,6 @@ document.addEventListener('init', function (event) {
     myGroup = genRoomDataSet(location.hash);
     myPeerID = `${myGroup.myGroupName}-${myGroup.myName}`;
     console.info(`[INFO]: ${myGroup.myGroupName} / ${myGroup.myName} / ${myPeerID}`);
-    partnerGroupNum = myGroup.partnerMembers.length;
 
     localStream = await navigator.mediaDevices.getUserMedia(
       {
@@ -71,7 +76,7 @@ document.addEventListener('init', function (event) {
     await myVideo.play().catch(console.error);
 
     peer = (window.peer = new window.Peer(
-      `${myPeerID}`, // can put any peerID
+      `${myPeerID}`,
       {
       key: window.__SKYWAY_KEY__,
       debug: 1,

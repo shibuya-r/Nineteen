@@ -3,6 +3,12 @@
   <ons-splitter>
     <ons-splitter-side id="menu" side="right" width="280px" collapse swipeable>
       <ons-page>
+        <div class="chat-container">
+          <div class="chat-header">
+            <h4>自分グループチャット</h4>
+            <ons-icon icon="window-close" size="25px" id="js-close-trigger" class="chat-close-icon"></ons-icon>
+          </div>
+        </div>
       </ons-page>
     </ons-splitter-side>
   </ons-splitter>
@@ -37,8 +43,8 @@
 
     <div id="container-menu" class="container-menu">
       <div class="container-menu-icons">
-        <ons-icon icon="comments" size="35px" id="js-chat-trigger"></ons-icon>
-        <ons-icon icon="sign-out-alt" size="35px" id="js-leave-trigger"></ons-icon>
+        <ons-icon icon="comments" size="35px" id="js-chat-trigger" class="menu-icon"></ons-icon>
+        <ons-icon icon="sign-out-alt" size="35px" id="js-leave-trigger" class="menu-icon"></ons-icon>
       </div>
     </div>
 
