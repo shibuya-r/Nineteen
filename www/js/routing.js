@@ -87,11 +87,8 @@ document.addEventListener('init', function (event) {
     };
   } 
 
-  console.log("---222----");
-  console.log(page.id)
   // === party　room entrance  on party setting page===
   if (page.id === "party-setting") {
-    console.log("---111----");
     page.querySelector("#js-party-start-btn").onclick = () => {
       moveToPartyRoomPage();
     };
@@ -165,7 +162,6 @@ const moveToPartySettingPage = (animation = 'fade') => {
 };
 
 const moveToPartyRoomPage = (animation = "fade") => {
-  console.log("ここまできたよ");
   myNavigtor.pushPage('../party/party-room.html', {
     animation
   });

@@ -1,5 +1,6 @@
 "use strct"
 // import { RoomCommunication } from '../../js/modules/skyway-room-communication.js';
+import { isLengthwise } from '../../js/app-utils.js';
 import {
   // RoomComposer,
   genRoomDataSet
@@ -9,6 +10,11 @@ document.addEventListener('init', function (event) {
   const page = event.target;
   if (page.id !== "party-room") {
     return
+  }
+
+  // [DEBUG]: ちゃんと制御する
+  if (isLengthwise()  === false) {
+    alert("画面を横向きにしてください");
   }
 
   // Config of selectors
