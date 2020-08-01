@@ -1,3 +1,4 @@
+// [NOTE]: DBがつながったら飲み会メンバー情報をインスタンス化して適宜アクセスできるようにする
 export class RoomComposer {
   constructor(groupName, myName) {
     this.groupName = groupName;
