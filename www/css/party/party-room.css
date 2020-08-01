@@ -1,4 +1,8 @@
 /* global styles */
+#party-room h6 {
+  display: inline-block;
+  margin: 10px 0;
+}
 
 #party-room ons-col {
   border: 1px solid #000000;
@@ -7,27 +11,41 @@
   overflow: hidden;
 }
 
-#party-room .menu-icon {
-  background-color: whitesmoke;
-  border-radius: 35%;
-  color: #696969;
-  display: inline-block;
-  padding: 4px 7px;
-  margin: 10% 15% 10% 0;
-}
-
-#party-room h4 {
-  display: inline-block;
-}
-
-#party-room .chat-header {
-  text-align: center;
-}
-
-#party-room .chat-container {
+#party-room video {
+  border-radius: 15%;
+  background-color: #111;
   height: 100%;
-  margin: 0 auto;
-  width: 95%;
+  width: 100%;
+}
+
+
+#party-room .chat-body-content-child {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  border: 1px #000000 solid;
+  margin-top: 2px;
+}
+
+#party-room .chat-sender-name {
+  font-size: 12px;
+  margin: 0;
+}
+
+#party-room .chat-body-content-parent {
+  margin-top: 5px;
+  max-width: 200px;
+  min-width: 20px;
+}
+
+#party-room .chat-body-content-p {
+  font-size: 16px;
+  margin: 0;
+  padding: 5px 10px;
+  word-break: break-all;
+}
+
+#party-room .chat-body-content-right {
+  margin: 5px 0 0 auto;
 }
 
 #party-room .chat-close-icon {
@@ -37,20 +55,44 @@
   right: 2px;
 }
 
-#party-room video {
-  border-radius: 15%;
-  background-color: #111;
-  /* object-fit: fill; */
+#party-room .chat-container {
+  position: relative;
   height: 100%;
-  width: 100%;
+  margin: 0 auto;
+  width: 95%;
+  z-index: 90;
 }
+
+#party-room .chat-footer {
+  bottom: 10px;
+  margin: 0 auto;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+
+#party-room .chat-footer-button {
+  margin-left: 1%;
+  width: 18%;
+}
+
+#party-room .chat-footer-input {
+  width: 70%;
+  padding: 3px 6px;
+}
+
+
+#party-room .chat-header {
+  text-align: center;
+}
+
 
 #party-room .container {
   background-color: #483d8b;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  height: 100%;
 }
 
 #party-room .container-menu {
@@ -65,15 +107,21 @@
 #party-room .container-menu-icons {
   display:table-cell;
   height: 100vh;
-  vertical-align:middle;
+  vertical-align: middle;
 }
 
 #party-room .containaer-video {
-  display: inline-block;d
+  display: inline-block;
   font-size: 10px;
   height:100%;
   margin-left: 1%;
   width: 90%;
+}
+
+#party-room .container-video-bottom {
+  height: 45%; /*[DEBUG]: 相手グループ:自分グループの動画表示サイズは6:4程度にする@2020/07/25:numaC  */
+  margin: 0 0 1% 0;
+  width: 100%;
 }
 
 #party-room .container-video-top {
@@ -82,86 +130,18 @@
   width: 100%;
 }
 
-#party-room .container-video-bottom {
-  margin: 0 0 1% 0;
-  height: 45%; /*[DEBUG]: 相手グループ:自分グループの動画表示サイズは6:4程度にする@2020/07/25:numaC  */
-  width: 100%;
-}
-
 #party-room .icon-msg {
   color: #FFFFFF;
   font-size: 13px;
-  text-align: left;
   margin: 5px 0 0 3px;
+  text-align: left;
 }
 
-/* 
-#party-room video {
-  background-color: #111;
-  width: 100%;
+#party-room .menu-icon {
+  background-color: whitesmoke;
+  border-radius: 35%;
+  color: #696969;
+  display: inline-block;
+  margin: 10% 15% 10% 0;
+  padding: 4px 7px;
 }
-
-#party-room .heading {
-  text-align: center;
-  margin-bottom: 0;
-}
-
-#party-room .note {
-  text-align: center;
-}
-
-#party-room .meta {
-  text-align: center;
-  font-size: .8rem;
-  color: gray;
-}
-
-
-
-
-#party-room .p2p-media {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.p2p-media .remote-stream {
-  width: 50%;
-}
-
-.p2p-media .local-stream {
-  width: 30%;
-}
-
-
-#party-room .p2p-data {
-  display: grid;
-  grid-template-columns: 30% 1fr;
-  margin: 0 8px;
-}
-
-.p2p-data .messages {
-  background-color: #eee;
-  min-height: 100px;
-  padding: 8px;
-  margin-top: 0;
-}
-
-
-#party-room  .room {
-  display: grid;
-  grid-template-columns: 20% 30% 20% 20%;
-  gap: 8px;
-  margin: 0 8px;
-}
-
-.room .remote-streams {
-  background-color: #f6fbff;
-}
-
-.room .messages {
-  background-color: #eee;
-  min-height: 100px;
-  padding: 8px;
-  margin-top: 0;
-} */

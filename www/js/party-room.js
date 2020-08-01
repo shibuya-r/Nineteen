@@ -11,17 +11,15 @@ document.addEventListener('init', function (event) {
     return
   }
 
-  // 精査中
-  const groupMessages = document.getElementById('js-group-messages');
-  const personalMessages = document.getElementById('js-personal-messages');
-  const sendGroupTrigger = document.getElementById('js-group-send-trigger');
-  
-  
   // Config of selectors
+  const chatBody = document.getElementById('js-chat-body');
+  const chatButton = document.getElementById('js-chat-button');
+  const chatInput = document.getElementById('js-chat-input');
   const chatTrigger = document.getElementById('js-chat-trigger');
+  const chatTitle = document.getElementById('js-chat-title');
   const closeTrigger = document.getElementById('js-close-trigger');
   const containerMenu = document.getElementById('container-menu');
-  const menu = document.getElementById('menu');
+  const chat = document.getElementById('chat');
   const groupmateVideo1 = document.getElementById('js-groupmate-video1');
   const groupmateVideo2 = document.getElementById('js-groupmate-video2');
   const leaveTrigger = document.getElementById('js-leave-trigger');
@@ -36,32 +34,69 @@ document.addEventListener('init', function (event) {
   let peer = "";
   let room = "";
 
+  const createChatElement = (msg, senderName, isMyMsg = false) => {
+    const divParentNewElement = document.createElement('div');
+    const divChildNewElement = document.createElement('div');
+    const pMsgNewElement = document.createElement("p");
+    const pSendaerNameNewElement = document.createElement("p");
+    divChildNewElement.appendChild(pMsgNewElement);
+    divParentNewElement.classList.add("chat-body-content-parent");
+    divChildNewElement.classList.add("chat-body-content-child");
+    pSendaerNameNewElement.classList.add("chat-sender-name")
+    if (isMyMsg) {
+      divParentNewElement.classList.add("chat-body-content-right");
+    } else {
+      pSendaerNameNewElement.textContent = senderName;
+      divParentNewElement.appendChild(pSendaerNameNewElement);
+    }
+    pMsgNewElement.classList.add("chat-body-content-p");
+    pMsgNewElement.textContent = msg;
+    divParentNewElement.appendChild(divChildNewElement);
+    chatBody.appendChild(divParentNewElement);
+  };
+
+  const isSameGroup = (sender) => {
+    return myGroup.myMembers.includes(sender);
+  };
+
   // Set EventListners
+  chatButton.addEventListener('click', () => {
+    if (chatInput.value !== "") {
+      let chatMsg = chatInput.value;
+      console.log(myGroup.myName)
+      const val = {
+        sender: myGroup.myName,
+        msg: chatMsg
+      }
+      room.send(val);
+      createChatElement(chatMsg, myGroup.myName, true);
+      console.info(`=== You send ${chatMsg}`);
+      chatInput.value = "";
+    }
+  });
+
   chatTrigger.addEventListener('click', () => {
-    menu.open();
+    chat.open();
     containerMenu.style.display = "none";
+    groupmateVideo2.style.display = "none";
+    partnerVideo3.style.display = "none";
   });
 
   closeTrigger.addEventListener('click', () => {
-    menu.close();
+    chat.close();
     containerMenu.style.display = "inline-block";
+    groupmateVideo2.style.display = "block";
+    partnerVideo3.style.display = "block";
   });
 
   leaveTrigger.addEventListener('click', () => room.close(), { once: true });
 
-  // Set static methods
-  const isReceiver = trgMember => {
-    return trgMember == peerID;
-  };
-
-  const isSameGroup = senderGroupName => {
-    return senderGroupName == groupName;
-  };
 
   // Peerの生成 / カメラの起動
   (async function main() {
     myGroup = genRoomDataSet(location.hash);
     myPeerID = `${myGroup.myGroupName}-${myGroup.myName}`;
+    chatTitle.textContent = `チャット: ${myGroup.myGroupName}`;
     console.info(`[INFO]: ${myGroup.myGroupName} / ${myGroup.myName} / ${myPeerID}`);
 
     localStream = await navigator.mediaDevices.getUserMedia(
@@ -141,13 +176,11 @@ document.addEventListener('init', function (event) {
       await newRemoteVideo.play().catch(console.error);
     });
 
-    room.on('data', ({ data, src }) => {
-      if ( isSameGroup(data.trg) ) {
-        groupMessages.textContent += `${src}: ${data.content}\n`;
-      } else {
-        if ( isReceiver(data.trg) ) {
-          personalMessages.textContent += `${src}: ${data.content}\n`;
-        }
+    room.on('data', data => {
+      const dataVal = data.data;
+      if (isSameGroup(dataVal.sender)) {
+        createChatElement(dataVal.msg, dataVal.sender);
+        console.info(`=== ${dataVal.sender} send ${dataVal.msg}`);
       }
     });
 
@@ -170,16 +203,5 @@ document.addEventListener('init', function (event) {
         remoteVideo.srcObject = null;
       });
     });
-    
-    // sendGroupTrigger.addEventListener('click', onClickGroupSend);
-    // function onClickGroupSend() {
-    //   const sendData = {
-    //     trg: `${groupName}`,
-    //     content: groupLocalText.value
-    //   };
-    //   room.send(sendData);
-    //   groupMessages.textContent += `You: ${groupLocalText.value}\n`;
-    //   groupLocalText.value = '';
-    // };
   };
 });

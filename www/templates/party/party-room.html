@@ -1,12 +1,20 @@
 <!-- 飲み会ホーム画面 -->
 <ons-page id="party-room">
   <ons-splitter>
-    <ons-splitter-side id="menu" side="right" width="280px" collapse swipeable>
+    <ons-splitter-side id="chat" side="right" width="320px" collapse >
       <ons-page>
         <div class="chat-container">
           <div class="chat-header">
-            <h4>自分グループチャット</h4>
+            <h6 id="js-chat-title"></h6>
             <ons-icon icon="window-close" size="25px" id="js-close-trigger" class="chat-close-icon"></ons-icon>
+          </div>
+
+          <div id="js-chat-body">
+          </div>
+
+          <div class="chat-footer">
+            <input type="text" id="js-chat-input" class="chat-footer-input">
+            <button type="button" id="js-chat-button" class="chat-footer-button">送信</button>
           </div>
         </div>
       </ons-page>
