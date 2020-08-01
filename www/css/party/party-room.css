@@ -1,4 +1,4 @@
-/* global styles */
+/* Styles for party-room.html */
 #party-room h6 {
   display: inline-block;
   margin: 10px 0;
@@ -18,7 +18,6 @@
   width: 100%;
 }
 
-
 #party-room .chat-body-content-child {
   background-color: #FFFFFF;
   border-radius: 20px;
@@ -26,15 +25,8 @@
   margin-top: 2px;
 }
 
-#party-room .chat-sender-name {
-  font-size: 12px;
-  margin: 0;
-}
-
-#party-room .chat-body-content-parent {
-  margin-top: 5px;
-  max-width: 200px;
-  min-width: 20px;
+#party-room .chat-header {
+  text-align: center;
 }
 
 #party-room .chat-body-content-p {
@@ -42,6 +34,12 @@
   margin: 0;
   padding: 5px 10px;
   word-break: break-all;
+}
+
+#party-room .chat-body-content-parent {
+  margin-top: 5px;
+  max-width: 200px;
+  min-width: 20px;
 }
 
 #party-room .chat-body-content-right {
@@ -56,9 +54,9 @@
 }
 
 #party-room .chat-container {
-  position: relative;
   height: 100%;
   margin: 0 auto;
+  position: relative;
   width: 95%;
   z-index: 90;
 }
@@ -77,15 +75,14 @@
 }
 
 #party-room .chat-footer-input {
-  width: 70%;
   padding: 3px 6px;
+  width: 70%;
 }
 
-
-#party-room .chat-header {
-  text-align: center;
+#party-room .chat-sender-name {
+  font-size: 12px;
+  margin: 0;
 }
-
 
 #party-room .container {
   background-color: #483d8b;
