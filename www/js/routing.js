@@ -38,20 +38,17 @@ document.addEventListener('init', function (event) {
       moveToEditAuthInfoPage();
     };
   }
-  page.querySelector("#go-setting-info").onclick = () => {
-    moveToSettingInfoPage();
-  };
   // === home footer tabs ===
   if (page.id === "group"
-    || page.id === "topic"
-    || page.id === "home-arr"
-    || page.id === "home-now"
-    || page.id === "home-rcmdd"
-    || page.id === "match-making-matched"
-    || page.id === "match-making-offered-by"
-    || page.id === "match-making-offered-to"
-    || page.id === "schedule-calendar"
-    || page.id === "schedule-list"
+  || page.id === "topic"
+  || page.id === "home-arr"
+  || page.id === "home-now"
+  || page.id === "home-rcmdd"
+  || page.id === "match-making-matched"
+  || page.id === "match-making-offered-by"
+  || page.id === "match-making-offered-to"
+  || page.id === "schedule-calendar"
+  || page.id === "schedule-list"
   ) {
     page.querySelector("#js-group-tab").onclick = () => {
       moveToGroupPage();
@@ -68,8 +65,11 @@ document.addEventListener('init', function (event) {
     page.querySelector("#js-topic-tab").onclick = () => {
       moveToTopicPage();
     };
+    page.querySelector("#go-setting-info").onclick = () => {
+      moveToSettingInfoPage();
+    };
   }
-
+  
   // === match-making header tabs ===
   if (page.id === 'match-making-matched' ||
     page.id === 'match-making-offered-by' ||
