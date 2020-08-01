@@ -10,10 +10,9 @@ document.addEventListener('init', function (event) {
   myNavigtor = document.querySelector('#myNavigator');
 
   // === home header tabs ===
-  if (page.id === 'home-arr'
-    || page.id === 'home-now'
-    || page.id === 'home-rcmdd')
-  {
+  if (page.id === 'home-arr' ||
+    page.id === 'home-now' ||
+    page.id === 'home-rcmdd') {
     page.querySelector('#js-home-arr-btn').onclick = () => {
       moveToHomeArrPage();
     };
@@ -24,7 +23,24 @@ document.addEventListener('init', function (event) {
       moveToHomeRcmddPage();
     };
   }
-
+  // === setting-info menu ===
+  if (page.id === 'setting-info') {
+    page.querySelector("#help-list").onclick = () => {
+      moveToHelpListPage();
+    };
+    page.querySelector("#my-profile-edit").onclick = () => {
+      moveToProfileEditPage();
+    };
+    page.querySelector("#terms-list").onclick = () => {
+      moveToTermsListPage();
+    };
+    page.querySelector("#my-authentication-edit").onclick = () => {
+      moveToEditAuthInfoPage();
+    };
+  }
+  page.querySelector("#go-setting-info").onclick = () => {
+    moveToSettingInfoPage();
+  };
   // === home footer tabs ===
   if (page.id === "group"
     || page.id === "topic"
@@ -55,10 +71,9 @@ document.addEventListener('init', function (event) {
   }
 
   // === match-making header tabs ===
-  if (page.id === 'match-making-matched'
-    || page.id === 'match-making-offered-by'
-    || page.id === 'match-making-offered-to')
-  {
+  if (page.id === 'match-making-matched' ||
+    page.id === 'match-making-offered-by' ||
+    page.id === 'match-making-offered-to') {
     page.querySelector("#js-matched").onclick = () => {
       moveToMatchMakingMatchedPage();
     };
@@ -71,9 +86,8 @@ document.addEventListener('init', function (event) {
   }
 
   // === match making party option on schedule-list page===
-  if (page.id === "schedule-list"
-    || page.id === "schedule-calendar")
-  {
+  if (page.id === "schedule-list" ||
+    page.id === "schedule-calendar") {
     if (page.id === "schedule-list") {
       page.querySelector("#js-move-to-party-setting-sample").onclick = () => {
         moveToPartySettingPage();
@@ -85,7 +99,7 @@ document.addEventListener('init', function (event) {
     page.querySelector("#js-schedule-list-tab").onclick = () => {
       moveToScheduleListPage();
     };
-  } 
+  }
 
   // === party　room entrance  on party setting page===
   if (page.id === "party-setting") {
@@ -195,6 +209,36 @@ const moveToGropProfilePage = (animation = 'fade') => {
 const moveToMemberProfilePage = (animation = 'fade') => {
   // Currently, only the member that named member-hoge in group profile page can move to it. After DB connected, parsing id that contain member name or unique id, then move the target profile page.
   myNavigtor.pushPage('../profile-view.html', {
+    animation
+  });
+};
+
+const moveToSettingInfoPage = (animation = 'fade') => {
+  myNavigtor.pushPage('../setting-info/main.html', {
+    animation
+  });
+};
+
+const moveToHelpListPage = (animation = 'fade') => {
+  myNavigtor.pushPage('../setting-info/help-list.html', {
+    animation
+  });
+};
+
+const moveToProfileEditPage = (animation = 'fade') => {
+  myNavigtor.pushPage('../setting-info/my-profile-edit.html', {
+    animation
+  });
+};
+
+const moveToTermsListPage = (animation = 'fade') => {
+  myNavigtor.pushPage('../setting-info/terms-list.html', {
+    animation
+  });
+};
+
+const moveToEditAuthInfoPage = (animation = 'fade') => {
+  myNavigtor.pushPage('../setting-info/edit-auth-info.html', {
     animation
   });
 };
