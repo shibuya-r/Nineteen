@@ -38,26 +38,38 @@ document.addEventListener('init', function (event) {
       moveToEditAuthInfoPage();
     };
   }
-  page.querySelector("#go-setting-info").onclick = () => {
-    moveToSettingInfoPage();
-  };
   // === home footer tabs ===
-  page.querySelector("#js-group-tab").onclick = () => {
-    moveToGroupPage();
-  };
-  page.querySelector("#js-home-tab").onclick = () => {
-    moveToHomeRcmddPage();
-  };
-  page.querySelector("#js-match-making-tab").onclick = () => {
-    moveToMatchMakingMatchedPage();
-  };
-  page.querySelector("#js-schedule-tab").onclick = () => {
-    moveToScheduleListPage();
-  };
-  page.querySelector("#js-topic-tab").onclick = () => {
-    moveToTopicPage();
-  };
-
+  if (page.id === "group"
+  || page.id === "topic"
+  || page.id === "home-arr"
+  || page.id === "home-now"
+  || page.id === "home-rcmdd"
+  || page.id === "match-making-matched"
+  || page.id === "match-making-offered-by"
+  || page.id === "match-making-offered-to"
+  || page.id === "schedule-calendar"
+  || page.id === "schedule-list"
+  ) {
+    page.querySelector("#js-group-tab").onclick = () => {
+      moveToGroupPage();
+    };
+    page.querySelector("#js-home-tab").onclick = () => {
+      moveToHomeRcmddPage();
+    };
+    page.querySelector("#js-match-making-tab").onclick = () => {
+      moveToMatchMakingMatchedPage();
+    };
+    page.querySelector("#js-schedule-tab").onclick = () => {
+      moveToScheduleListPage();
+    };
+    page.querySelector("#js-topic-tab").onclick = () => {
+      moveToTopicPage();
+    };
+    page.querySelector("#go-setting-info").onclick = () => {
+      moveToSettingInfoPage();
+    };
+  }
+  
   // === match-making header tabs ===
   if (page.id === 'match-making-matched' ||
     page.id === 'match-making-offered-by' ||
@@ -89,15 +101,28 @@ document.addEventListener('init', function (event) {
     };
   }
 
+  // === party　room entrance  on party setting page===
+  if (page.id === "party-setting") {
+    page.querySelector("#js-party-start-btn").onclick = () => {
+      moveToPartyRoomPage();
+    };
+  }
+
   // === Others ===
   // Move to goup profile page
-  page.querySelector("#group-hoge").onclick = () => {
-    moveToGropProfilePage();
-  };
+  if (page.id === "home-rcmdd") { // [DEBUG]: グループプロフィール閲覧への遷移があるページはすべて追加する
+    page.querySelector("#group-hoge").onclick = () => {
+      moveToGropProfilePage();
+    };
+  }
   // Move to member profile page
-  page.querySelector("#member-hoge").onclick = () => {
-    moveToMemberProfilePage();
-  };
+  if (page.id === "partner-group-profile" // [DEBUG]: メンバープロフィール閲覧の遷移があるページはすべて足す
+    || page.id === "group-profile-edit"
+  ) {
+    page.querySelector("#member-hoge").onclick = () => {
+      moveToMemberProfilePage();
+    };
+  }
 });
 
 // methods declaration
@@ -149,6 +174,12 @@ const moveToPartySettingPage = (animation = 'fade') => {
     animation
   });
 };
+
+const moveToPartyRoomPage = (animation = "fade") => {
+  myNavigtor.pushPage('../party/party-room.html', {
+    animation
+  });
+}
 
 const moveToScheduleCalendarPage = (animation = 'fade') => {
   myNavigtor.pushPage('../schedule/schedule-calendar.html', {

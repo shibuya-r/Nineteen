@@ -1,0 +1,60 @@
+<!-- 飲み会ホーム画面 -->
+<ons-page id="party-room">
+  <ons-splitter>
+    <ons-splitter-side id="chat" side="right" width="320px" collapse >
+      <ons-page>
+        <div class="chat-container">
+          <div class="chat-header">
+            <h6 id="js-chat-title"></h6>
+            <ons-icon icon="window-close" size="25px" id="js-close-trigger" class="chat-close-icon"></ons-icon>
+          </div>
+
+          <div id="js-chat-body">
+          </div>
+
+          <div class="chat-footer">
+            <input type="text" id="js-chat-input" class="chat-footer-input">
+            <button type="button" id="js-chat-button" class="chat-footer-button">送信</button>
+          </div>
+        </div>
+      </ons-page>
+    </ons-splitter-side>
+  </ons-splitter>
+
+  <div class="page__background background_whitesmoke"></div>
+  <div class="container">
+    <div class="containaer-video">
+      <ons-row class="container-video-top">
+        <ons-col id="op-video-box-left">
+          <video id="js-partner-video1"></video>
+        </ons-col >
+        <ons-col>
+          <video id="js-partner-video2"></video>
+        </ons-col>
+        <ons-col>
+          <video id="js-partner-video3"></video>
+        </ons-col>
+      </ons-row>
+
+      <ons-row class="container-video-bottom">
+        <ons-col>
+          <video id="js-my-video"></video>
+        </ons-col>
+        <ons-col>
+          <video id="js-groupmate-video1"></video>
+        </ons-col>
+        <ons-col>
+          <video id="js-groupmate-video2"></video>
+        </ons-col>
+      </ons-row>
+    </div>
+
+    <div id="container-menu" class="container-menu">
+      <div class="container-menu-icons">
+        <ons-icon icon="comments" size="35px" id="js-chat-trigger" class="menu-icon"></ons-icon>
+        <ons-icon icon="sign-out-alt" size="35px" id="js-leave-trigger" class="menu-icon"></ons-icon>
+      </div>
+    </div>
+
+  </div>
+</ons-page>
