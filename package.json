@@ -18,10 +18,23 @@
     },
     "scripts": {
         "monaca:preview": "npm run dev",
-        "dev": "browser-sync start -s www/ --watch --port 8080 --ui-port 8081"
+        "dev": "browser-sync start -s www/ --watch --port 8080 --ui-port 8081",
+        "gulp": "gulp"
     },
     "devDependencies": {
+        "@babel/core": "^7.11.1",
+        "@babel/polyfill": "^7.10.4",
+        "@babel/preset-env": "^7.11.0",
+        "aws-amplify": "^3.0.23",
+        "babelify": "^10.0.0",
         "browser-sync": "^2.26.7",
-        "cordova": "^9.0.0"
+        "browserify": "^16.5.2",
+        "cordova": "^9.0.0",
+        "gulp": "^4.0.2",
+        "gulp-rename": "^2.0.0",
+        "gulp-uglify": "^3.0.2",
+        "vinyl-buffer": "^1.0.1",
+        "vinyl-source-stream": "^2.0.0",
+        "watchify": "^3.11.1"
     }
 }
