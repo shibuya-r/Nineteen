@@ -8,7 +8,7 @@ import '@babel/polyfill';
 
 Amplify.configure(awsconfig);
 
-const Dao = {
+var Dao = {
 
     /* Query - comparable to SELECT in SQL */
 
@@ -167,5 +167,3 @@ const Dao = {
     }
 
 }
-
-export default Dao
